@@ -1,0 +1,3 @@
+﻿  StringUtilities.cpp
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Tanming Cui\Desktop\CSE687_Project1 (2)\CSE687_Project1\x64\Debug\StringUtilities.exe : fatal error LNK1120: 1 unresolved externals

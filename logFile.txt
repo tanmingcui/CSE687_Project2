@@ -1,0 +1,3576 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Tue Mar  6 14:48:31 2018
+     Path: "C:\Users\Tanming Cui\Desktop\CSE687_Project2"
+     Args: *.h, *.cpp, CSE687_Project2.sln, /v, /r, /b, /f
+
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < unordered_map > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < algorithm > 
+  Preproc Stmt   : # include "../DateTime/DateTime.h" 
+--- stack size = 2 ---
+  namespace def  : namespace NoSqlDb { 
+--- stack size = 3 ---
+  class def      : template < typename T > class DbElement { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Children = std :: vector < Key > ; 
+--- stack size = 4 ---
+  function def   : std :: string & name ( ) { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string name ( ) const { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void name ( const std :: string & name ) { 
+  executable     : name_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & descrip ( ) { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string descrip ( ) const { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void descrip ( const std :: string & name ) { 
+  executable     : descrip_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime & dateTime ( ) { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime dateTime ( ) const { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dateTime ( const DateTime & dateTime ) { 
+  executable     : dateTime_ = dateTime ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children & children ( ) { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children children ( ) const { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void children ( const Children & children ) { 
+  executable     : children_ = children ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T & payLoad ( ) { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T payLoad ( ) const { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void payLoad ( const T & payLoad ) { 
+  executable     : payLoad_ = payLoad ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: string name_ ; 
+  data declar    : std :: string descrip_ ; 
+  data declar    : DateTime dateTime_ ; 
+  data declar    : Children children_ ; 
+  data declar    : T payLoad_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class payload { 
+  default:       : public : 
+  using declar   : using key = std :: string ; 
+  using declar   : using keys = std :: vector < std :: string > ; 
+--- stack size = 4 ---
+  function def   : void setstr ( const key & input ) { 
+  executable     : str_ = input ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void setvec ( const keys & inputs ) { 
+  executable     : vec_ = inputs ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key & getstr ( ) { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key getstr ( ) const { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys & getvec ( ) { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys getvec ( ) const { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : key str_ ; 
+  data declar    : keys vec_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class DbCore { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Keys = std :: vector < Key > ; 
+  using declar   : using Children = Keys ; 
+  using declar   : using DbStore = std :: unordered_map < Key , DbElement < T >> ; 
+  using declar   : using iterator = typename DbStore :: iterator ; 
+--- stack size = 4 ---
+  function def   : void rmele ( const Key & key ) { 
+  executable     : dbStore_ . erase ( key ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void throwOnIndexNotFound ( bool doThrow ) { 
+  executable     : doThrow_ = doThrow ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > & getelement ( const Key & key ) { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > getelement ( const Key & key ) const { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator begin ( ) { 
+  executable     : return dbStore_ . begin ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator end ( ) { 
+  executable     : return dbStore_ . end ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore & dbStore ( ) { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore dbStore ( ) const { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dbStore ( const DbStore & dbStore ) { 
+  executable     : dbStore_ = dbStore ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbStore dbStore_ ; 
+  data declar    : bool doThrow_ = false ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class NoSQLDB { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : DbCore < T > & nosqldb ( ) { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbCore < T > nosqldb ( ) const { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void nosqldb ( const DbCore < T > & nosqldb1 ) { 
+  executable     : nosqldb_ = nosqldb1 ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & add ( const std :: string & key , const DbElement < T > & element ) { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > add ( const std :: string & key , const DbElement < T > & element ) const { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & remove ( const std :: string & key ) { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > remove ( const std :: string & key ) const { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbCore < T > nosqldb_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void NoSQLDB < T > :: modifydata ( const std :: string & key , const std :: string & metadatatype , const std :: string & after ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( key ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void shownosql ( const NoSQLDB < T > & nosqldb , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n" ; 
+  executable     : showHeader ( out ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : nosqldb . nosqldb ( ) ) { 
+--- stack size = 3 ---
+  executable     : out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > bool DbCore < T > :: contains ( const Key & key ) { 
+  data declar    : iterator iter = dbStore_ . find ( key ) ; 
+  executable     : return iter != dbStore_ . end ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > typename DbCore < T > :: Keys DbCore < T > :: keys ( ) { 
+  data declar    : DbCore < T > :: Keys dbKeys ; 
+  executable     : dbKeys . reserve ( size ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : dbs ) { 
+--- stack size = 3 ---
+  executable     : return dbKeys ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > size_t DbCore < T > :: size ( ) { 
+  executable     : return dbStore_ . size ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > & DbCore < T > :: operator [ ] ( const Key & key ) { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > DbCore < T > :: operator [ ] ( const Key & key ) const { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+  data declar    : throw ( std :: exception ( "key does not exist in db" ) ) ; 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showKeys ( DbCore < T > & db , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+--- stack size = 4 ---
+  control def    : for ( auto key : db . keys ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void showHeader ( std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "DateTime" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "Name" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Description" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Payload" ; 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "------------------------" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "--------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showElem ( const DbElement < T > & el , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << std :: string ( el . dateTime ( ) ) ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << el . name ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << el . descrip ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << el . payLoad ( ) ; 
+--- stack size = 4 ---
+  control def    : if ( children . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  control def    : for ( auto key : children ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < chrono > 
+  Preproc Stmt   : # include < ctime > 
+  Preproc Stmt   : # include < string > 
+--- stack size = 2 ---
+  class def      : class DateTime { 
+  default:       : public : 
+  using declar   : using SysClock = std :: chrono :: system_clock ; 
+  using declar   : using TimePoint = std :: chrono :: system_clock :: time_point ; 
+  using declar   : using Duration = std :: chrono :: system_clock :: duration ; 
+  default:       : private : 
+  data declar    : std :: tm * localtime ( const time_t * pTime ) ; 
+  data declar    : TimePoint tp_ ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < unordered_map > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < algorithm > 
+  Preproc Stmt   : # include "../DateTime/DateTime.h" 
+--- stack size = 2 ---
+  namespace def  : namespace NoSqlDb { 
+--- stack size = 3 ---
+  class def      : template < typename T > class DbElement { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Children = std :: vector < Key > ; 
+--- stack size = 4 ---
+  function def   : std :: string & name ( ) { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string name ( ) const { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void name ( const std :: string & name ) { 
+  executable     : name_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & descrip ( ) { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string descrip ( ) const { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void descrip ( const std :: string & name ) { 
+  executable     : descrip_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime & dateTime ( ) { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime dateTime ( ) const { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dateTime ( const DateTime & dateTime ) { 
+  executable     : dateTime_ = dateTime ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children & children ( ) { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children children ( ) const { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void children ( const Children & children ) { 
+  executable     : children_ = children ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T & payLoad ( ) { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T payLoad ( ) const { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void payLoad ( const T & payLoad ) { 
+  executable     : payLoad_ = payLoad ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: string name_ ; 
+  data declar    : std :: string descrip_ ; 
+  data declar    : DateTime dateTime_ ; 
+  data declar    : Children children_ ; 
+  data declar    : T payLoad_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class payload { 
+  default:       : public : 
+  using declar   : using key = std :: string ; 
+  using declar   : using keys = std :: vector < std :: string > ; 
+--- stack size = 4 ---
+  function def   : void setstr ( const key & input ) { 
+  executable     : str_ = input ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void setvec ( const keys & inputs ) { 
+  executable     : vec_ = inputs ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key & getstr ( ) { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key getstr ( ) const { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys & getvec ( ) { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys getvec ( ) const { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : key str_ ; 
+  data declar    : keys vec_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class DbCore { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Keys = std :: vector < Key > ; 
+  using declar   : using Children = Keys ; 
+  using declar   : using DbStore = std :: unordered_map < Key , DbElement < T >> ; 
+  using declar   : using iterator = typename DbStore :: iterator ; 
+--- stack size = 4 ---
+  function def   : void rmele ( const Key & key ) { 
+  executable     : dbStore_ . erase ( key ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void throwOnIndexNotFound ( bool doThrow ) { 
+  executable     : doThrow_ = doThrow ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > & getelement ( const Key & key ) { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > getelement ( const Key & key ) const { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator begin ( ) { 
+  executable     : return dbStore_ . begin ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator end ( ) { 
+  executable     : return dbStore_ . end ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore & dbStore ( ) { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore dbStore ( ) const { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dbStore ( const DbStore & dbStore ) { 
+  executable     : dbStore_ = dbStore ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbStore dbStore_ ; 
+  data declar    : bool doThrow_ = false ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class NoSQLDB { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : DbCore < T > & nosqldb ( ) { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbCore < T > nosqldb ( ) const { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void nosqldb ( const DbCore < T > & nosqldb1 ) { 
+  executable     : nosqldb_ = nosqldb1 ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & add ( const std :: string & key , const DbElement < T > & element ) { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > add ( const std :: string & key , const DbElement < T > & element ) const { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & remove ( const std :: string & key ) { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > remove ( const std :: string & key ) const { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbCore < T > nosqldb_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void NoSQLDB < T > :: modifydata ( const std :: string & key , const std :: string & metadatatype , const std :: string & after ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( key ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void shownosql ( const NoSQLDB < T > & nosqldb , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n" ; 
+  executable     : showHeader ( out ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : nosqldb . nosqldb ( ) ) { 
+--- stack size = 3 ---
+  executable     : out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > bool DbCore < T > :: contains ( const Key & key ) { 
+  data declar    : iterator iter = dbStore_ . find ( key ) ; 
+  executable     : return iter != dbStore_ . end ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > typename DbCore < T > :: Keys DbCore < T > :: keys ( ) { 
+  data declar    : DbCore < T > :: Keys dbKeys ; 
+  executable     : dbKeys . reserve ( size ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : dbs ) { 
+--- stack size = 3 ---
+  executable     : return dbKeys ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > size_t DbCore < T > :: size ( ) { 
+  executable     : return dbStore_ . size ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > & DbCore < T > :: operator [ ] ( const Key & key ) { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > DbCore < T > :: operator [ ] ( const Key & key ) const { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+  data declar    : throw ( std :: exception ( "key does not exist in db" ) ) ; 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showKeys ( DbCore < T > & db , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+--- stack size = 4 ---
+  control def    : for ( auto key : db . keys ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void showHeader ( std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "DateTime" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "Name" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Description" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Payload" ; 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "------------------------" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "--------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showElem ( const DbElement < T > & el , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << std :: string ( el . dateTime ( ) ) ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << el . name ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << el . descrip ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << el . payLoad ( ) ; 
+--- stack size = 4 ---
+  control def    : if ( children . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  control def    : for ( auto key : children ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # ifndef STRINGUTILITIES_H 
+  Preproc Stmt   : # define STRINGUTILITIES_H 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < functional > 
+  Preproc Stmt   : # include < locale > 
+--- stack size = 2 ---
+  namespace def  : namespace Utilities { 
+--- stack size = 3 ---
+  function def   : inline void Title ( const std :: string & text , std :: ostream & out = std :: cout , char underline = '=' ) { 
+  executable     : out << "\n  " << text ; 
+  executable     : out << "\n " << std :: string ( text . size ( ) + 2 , underline ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void title ( const std :: string & text , std :: ostream & out = std :: cout , char underline = '-' ) { 
+  executable     : out << "\n  " << text ; 
+  executable     : out << "\n " << std :: string ( text . size ( ) + 2 , underline ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void putline ( size_t j = 1 , std :: ostream & out = std :: cout ) { 
+  executable     : for ( size_t i = 0 ; i < j ; ++ i ) out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline std :: basic_string < T > trim ( const std :: basic_string < T > & toTrim ) { 
+  executable     : if ( toTrim . size ( ) == 0 ) return toTrim ; 
+  data declar    : std :: basic_string < T > temp ; 
+  data declar    : std :: locale loc ; 
+  executable     : typename std :: basic_string < T > :: const_iterator iter = toTrim . begin ( ) ; 
+--- stack size = 4 ---
+  control def    : while ( isspace ( * iter , loc ) && * iter != '\n' ) { 
+--- stack size = 5 ---
+  control def    : if ( ++ iter == toTrim . end ( ) ) { 
+  default:       : break ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( ; iter != toTrim . end ( ) ; ++ iter ) { 
+--- stack size = 3 ---
+  executable     : typename std :: basic_string < T > :: reverse_iterator riter ; 
+  executable     : for ( riter = temp . rbegin ( ) ; 
+  executable     : riter != temp . rend ( ) ; 
+--- stack size = 4 ---
+  default:       : ++ riter ) { 
+--- stack size = 5 ---
+  control def    : if ( ! isspace ( * riter , loc ) || * riter == '\n' ) { 
+  default:       : break ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : if ( 0 < = pos && pos < temp . size ( ) ) temp . erase ( ++ pos ) ; 
+  executable     : return temp ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline std :: vector < std :: basic_string < T >> split ( const std :: basic_string < T > & toSplit , T splitOn = ',' ) { 
+  executable     : std :: vector < std :: basic_string < T >> splits ; 
+  data declar    : std :: basic_string < T > temp ; 
+  executable     : typename std :: basic_string < T > :: const_iterator iter ; 
+  executable     : for ( iter = toSplit . begin ( ) ; 
+  executable     : iter != toSplit . end ( ) ; 
+--- stack size = 4 ---
+  default:       : ++ iter ) { 
+--- stack size = 5 ---
+  control def    : if ( * iter != splitOn ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : else { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : if ( temp . length ( ) > 0 ) splits . push_back ( trim ( temp ) ) ; 
+  executable     : return splits ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline void showSplits ( const std :: vector < std :: basic_string < T >> & splits , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n" ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : splits ) { 
+--- stack size = 3 ---
+  executable     : out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < vector > 
+--- stack size = 2 ---
+  class def      : template < typename T > class TestExecutor { 
+  default:       : public : 
+  default:       : private : 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : template < typename T > bool TestExecutor < T > :: execute ( T t , const std :: string & name , std :: ostream & out ) { 
+  data declar    : bool result = false ; 
+--- stack size = 3 ---
+  control def    : try { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return result ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : template < typename T > void TestExecutor < T > :: check ( bool result , std :: ostream & out ) { 
+  executable     : if ( result ) out << "  passed" ; 
+  executable     : else out << "  failed" ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  class def      : class TestExecutive { 
+  default:       : public : 
+  using declar   : using Test = std :: function < bool ( ) > ; 
+--- stack size = 3 ---
+  struct def     : using TestStr = struct { 
+  data declar    : Test test ; 
+  data declar    : std :: string testName ; 
+--- stack size = 2 ---
+  using declar   : using Tests = std :: vector < TestStr > ; 
+  default:       : private : 
+  data declar    : Tests tests_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline void TestExecutive :: registerTest ( Test t , const std :: string & testName ) { 
+--- stack size = 3 ---
+  default:       : TestStr ts { 
+--- stack size = 2 ---
+  executable     : tests_ . push_back ( ts ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline void TestExecutive :: registerTest ( TestStr ts ) { 
+  executable     : tests_ . push_back ( ts ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline bool TestExecutive :: doTests ( ) { 
+  data declar    : TestExecutor < Test > tester ; 
+  data declar    : bool result = true ; 
+--- stack size = 3 ---
+  control def    : for ( auto item : tests_ ) { 
+  data declar    : bool tResult = tester . execute ( item . test , item . testName ) ; 
+--- stack size = 2 ---
+  executable     : return result ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include "../DBQuery/Conditions.h" 
+  Preproc Stmt   : # include "../Filemgr/file.h" 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < unordered_set > 
+  using declar   : using namespace NoSqlDb ; 
+--- stack size = 2 ---
+  namespace def  : namespace Repository { 
+--- stack size = 3 ---
+  class def      : class FileInfo { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : FileInfo ( ) { 
+  executable     : _FilePath = "" ; 
+  executable     : _isOpen = true ; 
+  executable     : _version = 0 ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & getFilePath ( ) { 
+  executable     : return _FilePath ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void putFilePath ( const std :: string & thepath ) { 
+  executable     : _FilePath = thepath ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : bool isOpen ( ) { 
+  executable     : return _isOpen ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void putOpen ( const bool open ) { 
+  executable     : _isOpen = open ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : int verNum ( ) { 
+  executable     : return _version ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void putvsrNum ( const int num ) { 
+  executable     : _version = num ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & getCata ( ) { 
+  executable     : return _Catagory ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void putCata ( const std :: string & catagory ) { 
+  executable     : _Catagory = catagory ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: string _FilePath ; 
+  data declar    : bool _isOpen ; 
+  data declar    : int _version ; 
+  data declar    : std :: string _Catagory ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class CoreRepo { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : CoreRepo ( ) { 
+  executable     : _RepoPath = "../Repository/" ; 
+  executable     : _CheckoutPath = "../CheckoutFile/" ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Query < FileInfo > repoquery ( ) { 
+  executable     : return _Repoquery ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & RepoPath ( ) { 
+  executable     : return _RepoPath ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & CheckoutPath ( ) { 
+  executable     : return _CheckoutPath ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : NoSQLDB < FileInfo > _coreRepo ; 
+  data declar    : Query < FileInfo > _Repoquery = Query < FileInfo > ( _coreRepo ) ; 
+  data declar    : std :: string _RepoPath ; 
+  data declar    : std :: string _CheckoutPath ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : bool CoreRepo :: isExisit ( const std :: string & thename ) { 
+  data declar    : Conditions < FileInfo > forSearch ; 
+  executable     : forSearch . name ( thename ) ; 
+  executable     : _Repoquery = Query < FileInfo > ( _coreRepo ) ; 
+  data declar    : Query < FileInfo > theres = _Repoquery . select ( forSearch ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : resdb . nosqldb ( ) ) { 
+  data declar    : DbElement < FileInfo > ele = item . second ; 
+--- stack size = 3 ---
+  executable     : return false ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void CoreRepo :: Browse ( const std :: string & filename ) { 
+  data declar    : std :: string path = _RepoPath + findlatest ( filename ) ; 
+  executable     : path = Path :: getFullFileSpec ( path ) ; 
+  default:       : File bufferIn ( path ) ; 
+  executable     : bufferIn . open ( File :: in , File :: binary ) ; 
+  executable     : if ( ! bufferIn . isGood ( ) ) std :: cout << "\n  could not open \"" << filename << "\" for reading" ; 
+  executable     : else std :: cout << "\n  opening: \"" << filename << "\" for reading" ; 
+  data declar    : const size_t bufLen = 124 ; 
+  executable     : File :: byte buffer [ bufLen ] ; 
+--- stack size = 4 ---
+  control def    : while ( true ) { 
+  data declar    : size_t resultSize = bufferIn . getBuffer ( bufLen , buffer ) ; 
+  data declar    : std :: string temp1 ( buffer , resultSize ) ; 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void showcheckouterror ( const std :: string & filename ) { 
+  executable     : std :: cout << "\n" ; 
+  executable     : std :: cout << "==================================" ; 
+  executable     : std :: cout << "Cannot find the file " + filename ; 
+  executable     : std :: cout << "==================================" ; 
+  executable     : std :: cout << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void CoreRepo :: Checkout ( const std :: string & filename ) { 
+--- stack size = 4 ---
+  control def    : if ( isExisit ( filename ) ) { 
+--- stack size = 5 ---
+  control def    : if ( ! me . isGood ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : else { 
+  data declar    : std :: string des = _CheckoutPath + filename ; 
+--- stack size = 6 ---
+  control def    : if ( you . isGood ( ) ) { 
+--- stack size = 7 ---
+  control def    : while ( me . isGood ( ) ) { 
+  data declar    : static size_t count = 0 ; 
+  data declar    : Block b = me . getBlock ( 1024 ) ; 
+--- stack size = 8 ---
+  control def    : if ( ++ count < 10 ) { 
+--- stack size = 7 ---
+--- stack size = 8 ---
+  control def    : if ( b . size ( ) < 1024 ) { 
+--- stack size = 7 ---
+--- stack size = 6 ---
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  default:       : else showcheckouterror ( filename ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : std :: string CoreRepo :: tearoff ( const std :: string & fullname ) { 
+  data declar    : std :: size_t pos = length - 1 ; 
+  default:       : for ( ; pos > 0 && fullname [ pos ] != 'v' ; pos -- ) ; 
+  data declar    : std :: size_t start = 0 ; 
+  executable     : std :: string res ( fullname . substr ( start , pos - 1 ) ) ; 
+  executable     : return res ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : std :: string CoreRepo :: findlatest ( const std :: string & filename ) { 
+  data declar    : int largest = 0 ; 
+  data declar    : std :: string largestfile ( "" ) ; 
+  data declar    : Conditions < FileInfo > forSearch ; 
+  executable     : forSearch . name ( filename ) ; 
+  data declar    : Query < FileInfo > origin = _Repoquery ; 
+  data declar    : Query < FileInfo > theres = _Repoquery . select ( forSearch ) ; 
+  executable     : _Repoquery = origin ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : resdb . nosqldb ( ) ) { 
+  data declar    : DbElement < FileInfo > ele = item . second ; 
+--- stack size = 5 ---
+  control def    : if ( ele . name ( ) == filename ) { 
+  data declar    : std :: size_t pos = length - 1 ; 
+  data declar    : std :: string _name ( item . first ) ; 
+  data declar    : std :: size_t startpos = 0 ; 
+  data declar    : int thever = std :: stoi ( version ) ; 
+--- stack size = 6 ---
+  control def    : if ( thever > largest ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return largestfile ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void CoreRepo :: firstcheckin ( const std :: string & filepath , const std :: string & _descrip , bool open , const std :: string & CatagoryInfo , const std :: vector < std :: string > & childs , int versions ) { 
+  default:       : File me ( filepath ) ; 
+  executable     : me . open ( File :: in , File :: binary ) ; 
+--- stack size = 4 ---
+  control def    : if ( ! me . isGood ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : else { 
+  data declar    : DbElement < FileInfo > newFile ; 
+  data declar    : FileInfo newInfo ; 
+  data declar    : std :: string filename = Path :: getName ( filepath ) ; 
+  data declar    : std :: string des = _RepoPath + filename ; 
+--- stack size = 5 ---
+  control def    : if ( you . isGood ( ) ) { 
+--- stack size = 6 ---
+  control def    : while ( me . isGood ( ) ) { 
+  data declar    : static size_t count = 0 ; 
+  data declar    : Block b = me . getBlock ( 1024 ) ; 
+--- stack size = 7 ---
+  control def    : if ( ++ count < 10 ) { 
+--- stack size = 6 ---
+--- stack size = 7 ---
+  control def    : if ( b . size ( ) < 1024 ) { 
+--- stack size = 6 ---
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void CoreRepo :: Checkin ( const std :: string & filepath , const std :: string & _descrip , bool open , const std :: string & CatagoryInfo , const std :: vector < std :: string > & childs ) { 
+  executable     : if ( ! Directory :: exists ( _RepoPath ) ) Directory :: create ( _RepoPath ) ; 
+  data declar    : std :: string filename = Path :: getName ( filepath ) ; 
+--- stack size = 4 ---
+  control def    : if ( isExisit ( filename ) ) { 
+  data declar    : std :: string key ; 
+--- stack size = 5 ---
+  control def    : if ( theinfo . payLoad ( ) . isOpen ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : else { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : if ( ! isExisit ( filename ) ) firstcheckin ( filepath , _descrip , open , CatagoryInfo , childs , 1 ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : bool CoreRepo :: checkdependency ( const std :: string & packagename , const std :: string & filename ) { 
+  data declar    : Conditions < FileInfo > search ; 
+  executable     : search . descrip ( packagename ) ; 
+  executable     : std :: unordered_map < std :: string , std :: vector < std :: string >> deplist ; 
+  data declar    : Query < FileInfo > Origin = _Repoquery ; 
+  data declar    : NoSQLDB < FileInfo > result = _Repoquery . select ( search ) . query ( ) ; 
+  executable     : _Repoquery = Origin ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : result . nosqldb ( ) ) { 
+  data declar    : DbElement < FileInfo > ele = item . second ; 
+--- stack size = 5 ---
+  control def    : if ( ( ele . children ( ) . size ( ) > 0 ) && ( deplist . find ( ele . name ( ) ) == deplist . end ( ) ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  data declar    : std :: vector < std :: string > output ; 
+  executable     : if ( deplist . size ( ) > 0 ) depcheckhelper ( filename , deplist , output ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : output ) { 
+--- stack size = 5 ---
+  control def    : if ( ! isExisit ( item ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : for ( auto item : output ) std :: cout << "\n" << item ; 
+  executable     : std :: cout << "\n" ; 
+  executable     : std :: cout << "All dependecy file for " << filename << " exisit!" ; 
+  executable     : std :: cout << "\n" ; 
+  executable     : return true ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : void CoreRepo :: depcheckhelper ( const std :: string & filename , std :: unordered_map < std :: string , std :: vector < std :: string >> deplist , std :: vector < std :: string > & output ) { 
+  executable     : if ( deplist . find ( filename ) == deplist . end ( ) ) return ; 
+  data declar    : std :: vector < std :: string > childlist = deplist [ filename ] ; 
+--- stack size = 4 ---
+  control def    : for ( std :: string file : childlist ) { 
+  data declar    : std :: vector < std :: string > list = output ; 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < chrono > 
+  Preproc Stmt   : # include < ctime > 
+  Preproc Stmt   : # include < string > 
+--- stack size = 2 ---
+  class def      : class DateTime { 
+  default:       : public : 
+  using declar   : using SysClock = std :: chrono :: system_clock ; 
+  using declar   : using TimePoint = std :: chrono :: system_clock :: time_point ; 
+  using declar   : using Duration = std :: chrono :: system_clock :: duration ; 
+  default:       : private : 
+  data declar    : std :: tm * localtime ( const time_t * pTime ) ; 
+  data declar    : TimePoint tp_ ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < unordered_map > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < algorithm > 
+  Preproc Stmt   : # include "../DateTime/DateTime.h" 
+--- stack size = 2 ---
+  namespace def  : namespace NoSqlDb { 
+--- stack size = 3 ---
+  class def      : template < typename T > class DbElement { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Children = std :: vector < Key > ; 
+--- stack size = 4 ---
+  function def   : std :: string & name ( ) { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string name ( ) const { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void name ( const std :: string & name ) { 
+  executable     : name_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string & descrip ( ) { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string descrip ( ) const { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void descrip ( const std :: string & name ) { 
+  executable     : descrip_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime & dateTime ( ) { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime dateTime ( ) const { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dateTime ( const DateTime & dateTime ) { 
+  executable     : dateTime_ = dateTime ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children & children ( ) { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children children ( ) const { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void children ( const Children & children ) { 
+  executable     : children_ = children ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T & payLoad ( ) { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T payLoad ( ) const { 
+  executable     : return payLoad_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void payLoad ( const T & payLoad ) { 
+  executable     : payLoad_ = payLoad ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: string name_ ; 
+  data declar    : std :: string descrip_ ; 
+  data declar    : DateTime dateTime_ ; 
+  data declar    : Children children_ ; 
+  data declar    : T payLoad_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class payload { 
+  default:       : public : 
+  using declar   : using key = std :: string ; 
+  using declar   : using keys = std :: vector < std :: string > ; 
+--- stack size = 4 ---
+  function def   : void setstr ( const key & input ) { 
+  executable     : str_ = input ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void setvec ( const keys & inputs ) { 
+  executable     : vec_ = inputs ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key & getstr ( ) { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : key getstr ( ) const { 
+  executable     : return str_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys & getvec ( ) { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : keys getvec ( ) const { 
+  executable     : return vec_ ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : key str_ ; 
+  data declar    : keys vec_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class DbCore { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Keys = std :: vector < Key > ; 
+  using declar   : using Children = Keys ; 
+  using declar   : using DbStore = std :: unordered_map < Key , DbElement < T >> ; 
+  using declar   : using iterator = typename DbStore :: iterator ; 
+--- stack size = 4 ---
+  function def   : void rmele ( const Key & key ) { 
+  executable     : dbStore_ . erase ( key ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void throwOnIndexNotFound ( bool doThrow ) { 
+  executable     : doThrow_ = doThrow ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > & getelement ( const Key & key ) { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbElement < T > getelement ( const Key & key ) const { 
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator begin ( ) { 
+  executable     : return dbStore_ . begin ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : typename iterator end ( ) { 
+  executable     : return dbStore_ . end ( ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore & dbStore ( ) { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbStore dbStore ( ) const { 
+  executable     : return dbStore_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dbStore ( const DbStore & dbStore ) { 
+  executable     : dbStore_ = dbStore ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbStore dbStore_ ; 
+  data declar    : bool doThrow_ = false ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class NoSQLDB { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : DbCore < T > & nosqldb ( ) { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DbCore < T > nosqldb ( ) const { 
+  executable     : return nosqldb_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void nosqldb ( const DbCore < T > & nosqldb1 ) { 
+  executable     : nosqldb_ = nosqldb1 ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & add ( const std :: string & key , const DbElement < T > & element ) { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > add ( const std :: string & key , const DbElement < T > & element ) const { 
+  executable     : if ( ! nosqldb_ . contains ( key ) ) nosqldb_ [ key ] = element ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & remove ( const std :: string & key ) { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > remove ( const std :: string & key ) const { 
+  executable     : if ( nosqldb_ . contains ( key ) ) nosqldb_ . rmele ( key ) ; 
+  executable     : return * this ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : DbCore < T > nosqldb_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: addchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) const { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > & NoSQLDB < T > :: rmchild ( const std :: string & parentkey , const std :: string & childkey ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( parentkey ) ) { 
+  data declar    : bool hasthechild = false ; 
+  data declar    : int pos = - 1 ; 
+  data declar    : DbElement < T > thekey = nosqldb_ . getelement ( parentkey ) ; 
+--- stack size = 5 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( hasthechild ) { 
+--- stack size = 6 ---
+  control def    : for ( auto item : thekey . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void NoSQLDB < T > :: modifydata ( const std :: string & key , const std :: string & metadatatype , const std :: string & after ) { 
+--- stack size = 4 ---
+  control def    : if ( nosqldb_ . contains ( key ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void shownosql ( const NoSQLDB < T > & nosqldb , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n" ; 
+  executable     : showHeader ( out ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : nosqldb . nosqldb ( ) ) { 
+--- stack size = 3 ---
+  executable     : out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > bool DbCore < T > :: contains ( const Key & key ) { 
+  data declar    : iterator iter = dbStore_ . find ( key ) ; 
+  executable     : return iter != dbStore_ . end ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > typename DbCore < T > :: Keys DbCore < T > :: keys ( ) { 
+  data declar    : DbCore < T > :: Keys dbKeys ; 
+  executable     : dbKeys . reserve ( size ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : dbs ) { 
+--- stack size = 3 ---
+  executable     : return dbKeys ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > size_t DbCore < T > :: size ( ) { 
+  executable     : return dbStore_ . size ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > & DbCore < T > :: operator [ ] ( const Key & key ) { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > DbElement < T > DbCore < T > :: operator [ ] ( const Key & key ) const { 
+--- stack size = 4 ---
+  control def    : if ( ! contains ( key ) ) { 
+  data declar    : throw ( std :: exception ( "key does not exist in db" ) ) ; 
+--- stack size = 3 ---
+  executable     : return dbStore_ [ key ] ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showKeys ( DbCore < T > & db , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+--- stack size = 4 ---
+  control def    : for ( auto key : db . keys ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void showHeader ( std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "DateTime" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "Name" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Description" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "Payload" ; 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << "------------------------" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << "--------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << "-----------------------" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showElem ( const DbElement < T > & el , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n  " ; 
+  executable     : out << std :: setw ( 26 ) << std :: left << std :: string ( el . dateTime ( ) ) ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << el . name ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << el . descrip ( ) ; 
+--- stack size = 4 ---
+  control def    : if ( children . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  control def    : for ( auto key : children ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < unordered_set > 
+  Preproc Stmt   : # include "../DateTime/DateTime.h" 
+  Preproc Stmt   : # include "../DbCore/DbCore.h" 
+--- stack size = 2 ---
+  namespace def  : namespace NoSqlDb { 
+--- stack size = 3 ---
+  class def      : template < typename T > class Conditions { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Children = std :: vector < Key > ; 
+--- stack size = 4 ---
+  function def   : Key & name ( ) { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Key name ( ) const { 
+  executable     : return name_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void name ( const Key & name ) { 
+  executable     : name_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Key & descrip ( ) { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Key descrip ( ) const { 
+  executable     : return descrip_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void descrip ( const Key & name ) { 
+  executable     : descrip_ = name ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime & dateTime ( ) { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : DateTime dateTime ( ) const { 
+  executable     : return dateTime_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void dateTime ( const DateTime & dateTime ) { 
+  executable     : dateTime_ = dateTime ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children & children ( ) { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Children children ( ) const { 
+  executable     : return children_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void children ( const Children & children ) { 
+  executable     : children_ = children ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : Key name_ ; 
+  data declar    : Key descrip_ ; 
+  data declar    : DateTime dateTime_ ; 
+  data declar    : Children children_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class Query { 
+  default:       : public : 
+  using declar   : using Key = std :: string ; 
+  using declar   : using Keys = std :: vector < Key > ; 
+  using declar   : using MultiConds = std :: vector < Conditions < T >> ; 
+--- stack size = 4 ---
+  function def   : Query ( const NoSQLDB < T > & nosqldbq ) { 
+  executable     : nosqldbq_ = nosqldbq ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > & query ( ) { 
+  executable     : return nosqldbq_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : NoSQLDB < T > query ( ) const { 
+  executable     : return nosqldbq_ ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : NoSQLDB < T > nosqldbq_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > template < typename CallObj > Query < T > & Query < T > :: select ( CallObj callObj ) { 
+  data declar    : NoSQLDB < T > newone ; 
+  executable     : for ( auto ele = nosqldbq_ . nosqldb ( ) . begin ( ) ; 
+  executable     : ele != nosqldbq_ . nosqldb ( ) . end ( ) ; 
+--- stack size = 4 ---
+  default:       : ++ ele ) { 
+--- stack size = 3 ---
+  executable     : nosqldbq_ = newone ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void Query < T > :: showres ( ) { 
+  data declar    : std :: ostream & out = std :: cout ; 
+  executable     : out << "\n" ; 
+  executable     : out << "\n The query result is: " ; 
+  executable     : showHeader ( out ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : nosqldbq_ . nosqldb ( ) ) { 
+  data declar    : DbElement < T > temp = item . second ; 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > Query < T > :: from ( const Keys & keys ) const { 
+  data declar    : NoSQLDB < T > newone ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : keys ) { 
+--- stack size = 5 ---
+  control def    : if ( nosqldbq_ . nosqldb ( ) . contains ( item ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : nosqldbq_ = newone ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > & Query < T > :: from ( const Keys & keys ) { 
+  data declar    : NoSQLDB < T > newone ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : keys ) { 
+--- stack size = 5 ---
+  control def    : if ( nosqldbq_ . nosqldb ( ) . contains ( item ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : nosqldbq_ = newone ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > & Query < T > :: from ( const Key & key ) { 
+--- stack size = 4 ---
+  control def    : if ( key . size ( ) > 0 ) { 
+  data declar    : NoSQLDB < T > newone ; 
+--- stack size = 5 ---
+  control def    : if ( nosqldbq_ . nosqldb ( ) . contains ( key ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > Query < T > :: from ( const Key & key ) const { 
+--- stack size = 4 ---
+  control def    : if ( key . size ( ) > 0 ) { 
+  data declar    : NoSQLDB < T > newone ; 
+--- stack size = 5 ---
+  control def    : if ( nosqldbq_ . nosqldb ( ) . contains ( key ) ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > Query < T > :: select ( const MultiConds & conds ) const { 
+  executable     : std :: vector < NoSQLDB < T >> resseq ; 
+  data declar    : NoSQLDB < T > result ; 
+--- stack size = 4 ---
+  control def    : for ( auto cond : conds ) { 
+  data declar    : NoSQLDB < T > copy = nosqldbq_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( NoSQLDB < T > item : resseq ) { 
+--- stack size = 5 ---
+  control def    : for ( auto eachkey : itemcore . keys ( ) ) { 
+  data declar    : DbElement < T > eachelem = itemcore . getelement ( eachkey ) ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : nosqldbq_ = result ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > & Query < T > :: select ( const MultiConds & conds ) { 
+  executable     : std :: vector < NoSQLDB < T >> resseq ; 
+  data declar    : NoSQLDB < T > result ; 
+--- stack size = 4 ---
+  control def    : for ( auto cond : conds ) { 
+  data declar    : NoSQLDB < T > copy = nosqldbq_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( NoSQLDB < T > item : resseq ) { 
+--- stack size = 5 ---
+  control def    : for ( auto eachkey : itemcore . keys ( ) ) { 
+  data declar    : DbElement < T > eachelem = itemcore . getelement ( eachkey ) ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : nosqldbq_ = result ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > namehelper ( NoSQLDB < T > nosqldbq1 , const Conditions < T > & condition ) { 
+  data declar    : NoSQLDB < T > res ; 
+--- stack size = 4 ---
+  control def    : if ( condition . name ( ) . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  default:       : ++ ele ) { 
+  data declar    : DbElement < T > temp = ele - > second ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return nosqldbq1 ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > descriphelper ( NoSQLDB < T > nosqldbq1 , const Conditions < T > & condition ) { 
+  data declar    : NoSQLDB < T > res ; 
+--- stack size = 4 ---
+  control def    : if ( condition . descrip ( ) . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  default:       : ++ ele ) { 
+  data declar    : DbElement < T > temp = ele - > second ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return nosqldbq1 ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > childrenhelper ( NoSQLDB < T > nosqldbq1 , const Conditions < T > & condition ) { 
+  data declar    : NoSQLDB < T > res ; 
+--- stack size = 4 ---
+  control def    : if ( condition . children ( ) . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  default:       : ++ ele ) { 
+  data declar    : int issame = 0 ; 
+  data declar    : DbElement < T > temp = ele - > second ; 
+--- stack size = 6 ---
+  control def    : for ( auto childcond : condition . children ( ) ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return nosqldbq1 ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > NoSQLDB < T > datetimehelper ( NoSQLDB < T > nosqldbq1 , const Conditions < T > & condition ) { 
+  data declar    : NoSQLDB < T > res ; 
+  executable     : cond += DateTime :: makeDuration ( 0 , 10 ) ; 
+--- stack size = 4 ---
+  control def    : if ( cond < DateTime ( ) . now ( ) ) { 
+--- stack size = 5 ---
+  default:       : ++ ele ) { 
+  data declar    : DbElement < T > temp = ele - > second ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : return nosqldbq1 ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > Query < T > :: select ( const Conditions < T > & cond ) const { 
+  executable     : nosqldbq_ = namehelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = descriphelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = datetimehelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = childrenhelper ( nosqldbq_ , cond ) ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > Query < T > & Query < T > :: select ( const Conditions < T > & cond ) { 
+  executable     : nosqldbq_ = namehelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = descriphelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = datetimehelper ( nosqldbq_ , cond ) ; 
+  executable     : nosqldbq_ = childrenhelper ( nosqldbq_ , cond ) ; 
+  executable     : return * this ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > void showCond ( const Conditions < T > & cond , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n The query condition is: " ; 
+  executable     : showHeader ( ) ; 
+  executable     : out << "\n" ; 
+  executable     : cond . dateTime ( ) += DateTime :: makeDuration ( 0 , 5 ) ; 
+  executable     : if ( cond . dateTime ( ) < DateTime ( ) . now ( ) ) out << std :: setw ( 26 ) << std :: left << std :: string ( cond . dateTime ( ) ) ; 
+  executable     : if ( cond . dateTime ( ) > DateTime ( ) . now ( ) ) out << std :: setw ( 26 ) << std :: left << "" ; 
+  executable     : out << std :: setw ( 10 ) << std :: left << cond . name ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << cond . descrip ( ) ; 
+  executable     : out << std :: setw ( 25 ) << std :: left << cond . payLoad ( ) ; 
+--- stack size = 4 ---
+  control def    : if ( children . size ( ) > 0 ) { 
+--- stack size = 5 ---
+  control def    : for ( auto key : children ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < fstream > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < windows . h > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < utility > 
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < locale > 
+--- stack size = 2 ---
+  namespace def  : namespace Repository { 
+--- stack size = 3 ---
+  class def      : class Path { 
+  default:       : public : 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class Directory { 
+  default:       : public : 
+  default:       : private : 
+--- stack size = 2 ---
+  data declar    : typedef char Byte ; 
+--- stack size = 3 ---
+  class def      : class Block { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : Block ( size_t size = 0 ) : bytes_ ( size ) { 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: vector < Byte > bytes_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class File { 
+  default:       : public : 
+  using declar   : using byte = char ; 
+--- stack size = 4 ---
+  default:       : enum direction { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : enum type { 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : std :: string name_ ; 
+  data declar    : std :: ifstream * pIStream ; 
+  data declar    : std :: ofstream * pOStream ; 
+  data declar    : direction dirn_ ; 
+  data declar    : type typ_ ; 
+  data declar    : bool good_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline std :: string File :: name ( ) { 
+  executable     : return name_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : class FileSystemSearch { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : FileSystemSearch ( ) : pFindFileData ( & FindFileData ) { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : ~ FileSystemSearch ( ) { 
+  default:       : :: FindClose ( hFindFile ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string nextDirectory ( ) { 
+  executable     : while ( :: FindNextFileA ( hFindFile , pFindFileData ) ) if ( pFindFileData - > dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY ) return pFindFileData - > cFileName ; 
+  executable     : return "" ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : void close ( ) { 
+  default:       : :: FindClose ( hFindFile ) ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : HANDLE hFindFile ; 
+  data declar    : WIN32_FIND_DATAA FindFileData ; 
+  data declar    : WIN32_FIND_DATAA * pFindFileData ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # ifndef UTILITIES_H 
+  Preproc Stmt   : # define UTILITIES_H 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < functional > 
+--- stack size = 2 ---
+  namespace def  : namespace Utilities { 
+--- stack size = 3 ---
+  class def      : class StringHelper { 
+  default:       : public : 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class Converter { 
+  default:       : public : 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > std :: string Converter < T > :: toString ( const T & t ) { 
+  data declar    : std :: ostringstream out ; 
+  executable     : out << t ; 
+  executable     : return out . str ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > T Converter < T > :: toValue ( const std :: string & src ) { 
+  data declar    : std :: istringstream in ( src ) ; 
+  data declar    : T t ; 
+  executable     : in >> t ; 
+  executable     : return t ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < sstream > 
+--- stack size = 2 ---
+  namespace def  : namespace Utilities { 
+--- stack size = 3 ---
+  class def      : template < typename T > class Converter { 
+  default:       : public : 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > std :: string Converter < T > :: toString ( const T & t ) { 
+  data declar    : std :: ostringstream out ; 
+  executable     : out << t ; 
+  executable     : return out . str ( ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > T Converter < T > :: toValue ( const std :: string & src ) { 
+  data declar    : std :: istringstream in ( src ) ; 
+  data declar    : T t ; 
+  executable     : in >> t ; 
+  executable     : return t ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class Box { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : Box ( ) : primitive_ ( T ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : Box ( const T & t ) : primitive_ ( t ) { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : operator T & ( ) { 
+  executable     : return primitive_ ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : T & operator = ( const T & t ) { 
+  executable     : primitive_ = t ; 
+  executable     : return primitive_ ; 
+--- stack size = 3 ---
+  default:       : private : 
+  data declar    : T primitive_ ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  struct def     : struct ToXml { 
+--- stack size = 4 ---
+  function def   : virtual ~ ToXml ( ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  class def      : template < typename T > class PersistFactory : public T , ToXml { 
+  default:       : public : 
+--- stack size = 4 ---
+  function def   : PersistFactory ( const T & t ) { 
+  executable     : T :: operator = ( t ) ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  function def   : std :: string toXml ( const std :: string & tag ) { 
+  data declar    : std :: ostringstream out ; 
+  executable     : out << "<" << tag << ">" << * this << "</" << tag << ">" ; 
+  executable     : return out . str ( ) ; 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # ifndef STRINGUTILITIES_H 
+  Preproc Stmt   : # define STRINGUTILITIES_H 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < functional > 
+  Preproc Stmt   : # include < locale > 
+--- stack size = 2 ---
+  namespace def  : namespace Utilities { 
+--- stack size = 3 ---
+  function def   : inline void Title ( const std :: string & text , std :: ostream & out = std :: cout , char underline = '=' ) { 
+  executable     : out << "\n  " << text ; 
+  executable     : out << "\n " << std :: string ( text . size ( ) + 2 , underline ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void title ( const std :: string & text , std :: ostream & out = std :: cout , char underline = '-' ) { 
+  executable     : out << "\n  " << text ; 
+  executable     : out << "\n " << std :: string ( text . size ( ) + 2 , underline ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : inline void putline ( size_t j = 1 , std :: ostream & out = std :: cout ) { 
+  executable     : for ( size_t i = 0 ; i < j ; ++ i ) out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline std :: basic_string < T > trim ( const std :: basic_string < T > & toTrim ) { 
+  executable     : if ( toTrim . size ( ) == 0 ) return toTrim ; 
+  data declar    : std :: basic_string < T > temp ; 
+  data declar    : std :: locale loc ; 
+  executable     : typename std :: basic_string < T > :: const_iterator iter = toTrim . begin ( ) ; 
+--- stack size = 4 ---
+  control def    : while ( isspace ( * iter , loc ) && * iter != '\n' ) { 
+--- stack size = 5 ---
+  control def    : if ( ++ iter == toTrim . end ( ) ) { 
+  default:       : break ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( ; iter != toTrim . end ( ) ; ++ iter ) { 
+--- stack size = 3 ---
+  executable     : typename std :: basic_string < T > :: reverse_iterator riter ; 
+  executable     : for ( riter = temp . rbegin ( ) ; 
+  executable     : riter != temp . rend ( ) ; 
+--- stack size = 4 ---
+  default:       : ++ riter ) { 
+--- stack size = 5 ---
+  control def    : if ( ! isspace ( * riter , loc ) || * riter == '\n' ) { 
+  default:       : break ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : if ( 0 < = pos && pos < temp . size ( ) ) temp . erase ( ++ pos ) ; 
+  executable     : return temp ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline std :: vector < std :: basic_string < T >> split ( const std :: basic_string < T > & toSplit , T splitOn = ',' ) { 
+  executable     : std :: vector < std :: basic_string < T >> splits ; 
+  data declar    : std :: basic_string < T > temp ; 
+  executable     : typename std :: basic_string < T > :: const_iterator iter ; 
+  executable     : for ( iter = toSplit . begin ( ) ; 
+  executable     : iter != toSplit . end ( ) ; 
+--- stack size = 4 ---
+  default:       : ++ iter ) { 
+--- stack size = 5 ---
+  control def    : if ( * iter != splitOn ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : else { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+  executable     : if ( temp . length ( ) > 0 ) splits . push_back ( trim ( temp ) ) ; 
+  executable     : return splits ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  function def   : template < typename T > inline void showSplits ( const std :: vector < std :: basic_string < T >> & splits , std :: ostream & out = std :: cout ) { 
+  executable     : out << "\n" ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : splits ) { 
+--- stack size = 3 ---
+  executable     : out << "\n" ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # pragma once 
+  Preproc Stmt   : # include < vector > 
+--- stack size = 2 ---
+  class def      : template < typename T > class TestExecutor { 
+  default:       : public : 
+  default:       : private : 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : template < typename T > bool TestExecutor < T > :: execute ( T t , const std :: string & name , std :: ostream & out ) { 
+  data declar    : bool result = false ; 
+--- stack size = 3 ---
+  control def    : try { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return result ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : template < typename T > void TestExecutor < T > :: check ( bool result , std :: ostream & out ) { 
+  executable     : if ( result ) out << "  passed" ; 
+  executable     : else out << "  failed" ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  class def      : class TestExecutive { 
+  default:       : public : 
+  using declar   : using Test = std :: function < bool ( ) > ; 
+--- stack size = 3 ---
+  struct def     : using TestStr = struct { 
+  data declar    : Test test ; 
+  data declar    : std :: string testName ; 
+--- stack size = 2 ---
+  using declar   : using Tests = std :: vector < TestStr > ; 
+  default:       : private : 
+  data declar    : Tests tests_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline void TestExecutive :: registerTest ( Test t , const std :: string & testName ) { 
+--- stack size = 3 ---
+  default:       : TestStr ts { 
+--- stack size = 2 ---
+  executable     : tests_ . push_back ( ts ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline void TestExecutive :: registerTest ( TestStr ts ) { 
+  executable     : tests_ . push_back ( ts ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : inline bool TestExecutive :: doTests ( ) { 
+  data declar    : TestExecutor < Test > tester ; 
+  data declar    : bool result = true ; 
+--- stack size = 3 ---
+  control def    : for ( auto item : tests_ ) { 
+  data declar    : bool tResult = tester . execute ( item . test , item . testName ) ; 
+--- stack size = 2 ---
+  executable     : return result ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifndef WINDOWSHELPERS_H 
+  Preproc Stmt   : # define WINDOWSHELPERS_H 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < vector > 
+--- stack size = 2 ---
+  namespace def  : namespace WindowsHelpers { 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include "DateTime.h" 
+  Preproc Stmt   : # include "../Utilities/StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < unordered_map > 
+--- stack size = 2 ---
+  function def   : char * DateTime :: ctime ( const std :: time_t * pTime ) { 
+  data declar    : const rsize_t buffSize = 26 ; 
+  executable     : static char buffer [ buffSize ] ; 
+  data declar    : errno_t err = ctime_s ( buffer , buffSize , pTime ) ; 
+  executable     : return buffer ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: tm * DateTime :: localtime ( const std :: time_t * pTime ) { 
+  data declar    : static std :: tm result ; 
+  data declar    : errno_t err = localtime_s ( & result , pTime ) ; 
+  executable     : return & result ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( ) { 
+  executable     : tp_ = SysClock :: now ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : int readDateTimePart ( int & part , std :: istringstream & in ) { 
+  executable     : if ( in . peek ( ) == ':' ) in . get ( ) ; 
+  executable     : in >> part ; 
+  executable     : if ( in . good ( ) ) return part ; 
+  default:       : return - 1 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( std :: string dtStr ) { 
+--- stack size = 3 ---
+  default:       : static std :: unordered_map < std :: string , size_t > months = { 
+--- stack size = 4 ---
+  default:       : { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+  data declar    : std :: istringstream in ( dtStr ) ; 
+  executable     : std :: string day , month ; 
+  executable     : in >> day ; 
+  executable     : in >> month ; 
+  executable     : if ( ! in . good ( ) ) throw std :: exception ( "invalid DateTime string" ) ; 
+  data declar    : std :: tm date ; 
+  executable     : date . tm_mon = months [ month ] - 1 ; 
+  executable     : readDateTimePart ( date . tm_mday , in ) ; 
+  executable     : readDateTimePart ( date . tm_hour , in ) ; 
+  executable     : readDateTimePart ( date . tm_min , in ) ; 
+  executable     : readDateTimePart ( date . tm_sec , in ) ; 
+  executable     : readDateTimePart ( date . tm_year , in ) ; 
+  executable     : date . tm_year -= 1900 ; 
+  executable     : date . tm_isdst = - 1 ; 
+  data declar    : std :: time_t time = std :: mktime ( & date ) ; 
+  executable     : if ( time == - 1 ) throw "invalid system time" ; 
+  executable     : tp_ = SysClock :: from_time_t ( time ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: operator std :: string ( ) { 
+  executable     : return time ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( const DateTime :: TimePoint & tp ) : tp_ ( tp ) { 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: TimePoint DateTime :: makeTime ( size_t year , size_t mon , size_t day , size_t hour , size_t min , size_t sec ) { 
+  executable     : struct std :: tm t ; 
+  executable     : t . tm_sec = sec ; 
+  executable     : t . tm_min = min ; 
+  executable     : t . tm_hour = hour ; 
+  executable     : t . tm_mday = day ; 
+  executable     : t . tm_mon = mon - 1 ; 
+  executable     : t . tm_year = year - 1900 ; 
+  executable     : t . tm_isdst = - 1 ; 
+  data declar    : std :: time_t time = std :: mktime ( & t ) ; 
+--- stack size = 3 ---
+  control def    : if ( time == - 1 ) { 
+  data declar    : throw "invalid system time" ; 
+--- stack size = 2 ---
+  executable     : return SysClock :: from_time_t ( time ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: Duration DateTime :: makeDuration ( size_t hour , size_t min , size_t sec , size_t millisec ) { 
+  data declar    : Duration dur = std :: chrono :: milliseconds ( millisec ) + std :: chrono :: seconds ( sec ) + std :: chrono :: minutes ( min ) + std :: chrono :: hours ( hour ) ; 
+  executable     : return dur ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string DateTime :: now ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp ) ; 
+  data declar    : std :: string ts = ctime ( & t ) ; 
+  executable     : ts . resize ( ts . size ( ) - 1 ) ; 
+  executable     : return ts ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: TimePoint DateTime :: timepoint ( ) { 
+  executable     : return tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: ticks ( ) { 
+  data declar    : auto int_sec = std :: chrono :: duration_cast < std :: chrono :: seconds > ( tp_ . time_since_epoch ( ) ) ; 
+  default:       : return static_cast < size_t > ( int_sec . count ( ) ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string DateTime :: time ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: string ts = ctime ( & t ) ; 
+  executable     : ts . resize ( ts . size ( ) - 1 ) ; 
+  executable     : return ts ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator < ( const DateTime & dt ) { 
+  executable     : return tp_ < dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator > ( const DateTime & dt ) { 
+  executable     : return tp_ > dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator == ( const DateTime & dt ) { 
+  executable     : return tp_ == dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator += ( const DateTime :: Duration & dur ) { 
+  executable     : tp_ += dur ; 
+  executable     : return * this ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator + ( const DateTime :: Duration & dur ) { 
+  executable     : return DateTime ( tp_ + dur ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator -= ( const DateTime :: Duration & dur ) { 
+  executable     : tp_ -= dur ; 
+  executable     : return * this ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator - ( const DateTime :: Duration & dur ) { 
+  executable     : return DateTime ( tp_ - dur ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: year ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_year ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: month ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_mon ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: day ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_mday ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: hour ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_hour ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: minute ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_min ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: second ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_sec ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifdef TEST_DATETIME 
+  Preproc Stmt   : # include < iostream > 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Utilities :: Title ( "Testing DateTime class" ) ; 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : DateTime dt ; 
+  data declar    : DateTime now ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : std :: cout << "\n\n" ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+--- stack size = 2 ---
+  function def   : <     r   e   d   u   c   e     t   h   e     n   u   m   b   e   r     o   f     c   h   a   r   a   c   t   e   r   s     t   o     t   y   p   e     >  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -           a   u   t   o     p   u   t   L   i   n   e    =     [   ]   (   s   i   z   e  _   t     n    =     1   ,     s   t   d   :   :   o   s   t   r   e   a   m  &     o   u   t    =     s   t   d   :   :   c   o   u   t   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   p   u   t   l   i   n   e   (   n   ,     o   u   t   )   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  default:       : D   b   P   r   o   v   i   d   e   r     c   l   a   s   s      /  /    -     p   r   o   v   i   d   e   s     m   e   c   h   a   n   i   s   m     t   o     s   h   a   r   e     a     t   e   s   t     d   a   t   a   b   a   s   e     b   e   t   w   e   e   n     t   e   s   t     f   u   n   c   t   i   o   n   s      /  /         w   i   t   h   o   u   t     e   x   p   l   i   c   i   t   l   y     p   a   s   s   i   n   g     a   s     a     f   u   n   c   t   i   o   n     a   r   g   u   m   e   n   t   .           c   l   a   s   s     D   b   P   r   o   v   i   d   e   r       { 
+--- stack size = 3 ---
+  function def   : p   u   b   l   i   c   :         D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >  &     d   b   (   )     { 
+  executable     : r   e   t   u   r   n     d   b  _   ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : t   e   s   t     f   u   n   c   t   i   o   n   s              /  /  -  -  -  -   <     d   e   m   o     s   e   c   o   n   d     p   a   r   t     o   f     r   e   q   u   i   r   e   m   e   n   t    #   3     >  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -           b   o   o   l     t   e   s   t   R   3   b   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   t   i   t   l   e   (   " D e m o n s t r a t i n g   R e q u i r e m e n t   # 3 b   -   c r e a t i n g   D b C o r e "   )   ; 
+  executable     : N   o   S   Q   L   D   B   <   s   t   d   :   :   s   t   r   i   n   g   >     n   o   s   q   l   1   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >     d   b   ; 
+  executable     : D   b   E   l   e   m   e   n   t   <   s   t   d   :   :   s   t   r   i   n   g   >     d   e   m   o   E   l   e   m    =     d   b   [   " F a w c e t t "   ]   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A m m a r "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   d   e   s   c   r   i   p   (   " T A   f o r   C S E 6 8 7 "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " Y o u   s h o u l d   t r y   . . . "   )   ; 
+  executable     : d   b   [   " S a l m a n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S a l m a n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : i   f     (  !   d   b   .   c   o   n   t   a   i   n   s   (   " S a l m a n "   )   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " J i a n a n "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " D r .   F a w c e t t   s a i d   . . . "   )   ; 
+  executable     : d   b   [   " S u n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S u n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " N i k h i l "   )   ; 
+  executable     : d   b   [   " P r a s h a r "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " P a r a s h a r "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " P r a n j u l "   )   ; 
+  executable     : d   b   [   " A r o r a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A k a s h "   )   ; 
+  executable     : d   b   [   " A n j a n a p p a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : i   f     (   d   b   .   s   i   z   e   (   )    !  =     6   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     a f t e r   a d d i n g   e l e m e n t s   w i t h   k e y s :   "   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >   :   :   K   e   y   s     k   e   y   s    =     d   b   .   k   e   y   s   (   )   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     s h o w i n g   a l l   t h e   d a t a b a s e   e l e m e n t s : "   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     d a t a b a s e   k e y s   a r e :   "   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : r   e   t   u   r   n     t   r   u   e   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : i   n   t     m   a   i   n   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   T   i   t   l   e   (   " T e s t i n g   D b C o r e   -   H e   s a i d ,   s h e   s a i d   d a t a b a s e "   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : T   e   s   t   E   x   e   c   u   t   i   v   e     e   x   ; 
+--- stack size = 3 ---
+  default:       : d   e   f   i   n   e     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     t   e   s   t     f   u   n   c   t   i   o   n     a   n   d     m   e   s   s   a   g   e         T   e   s   t   E   x   e   c   u   t   i   v   e   :   :   T   e   s   t   S   t   r     t   s   3   b   { 
+--- stack size = 2 ---
+  executable     : r   e   g   i   s   t   e   r     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     T   e   s   t   E   x   e   c   u   t   i   v   e     i   n   s   t   a   n   c   e   ,     e   x         e   x   .   r   e   g   i   s   t   e   r   T   e   s   t   (   t   s   3   b   )   ; 
+  executable     : r   u   n     t   e   s   t   s         b   o   o   l     r   e   s   u   l   t    =     e   x   .   d   o   T   e   s   t   s   (   )   ; 
+  executable     : i   f     (   r   e   s   u   l   t    =  =     t   r   u   e   )           s   t   d   :   :   c   o   u   t     <   <     " \ n     a l l   t e s t s   p a s s e d "   ; 
+  executable     : e   l   s   e           s   t   d   :   :   c   o   u   t     <   <     " \ n     a t   l e a s t   o n e   t e s t   f a i l e d "   ; 
+  executable     : p   u   t   L   i   n   e   (   2   )   ; 
+  executable     : r   e   t   u   r   n     0   ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include "StringUtilities.h" 
+  Preproc Stmt   : # include "../CodeUtilities/CodeUtilities.h" 
+  Preproc Stmt   : # ifdef TEST_STRINGUTILITIES 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Title ( "Testing Utilities Package" ) ; 
+  executable     : putline ( ) ; 
+  executable     : title ( "test split(std::string, ',')" ) ; 
+  data declar    : std :: string test = "a, \n, bc, de, efg, i, j k lm nopq rst" ; 
+  executable     : std :: cout << "\n  test string = " << test ; 
+  data declar    : std :: vector < std :: string > result = split ( test ) ; 
+  executable     : showSplits ( result ) ; 
+  executable     : title ( "test split(std::string, ' ')" ) ; 
+  executable     : std :: cout << "\n  test string = " << test ; 
+  executable     : result = split ( test , ' ' ) ; 
+  executable     : showSplits ( result ) ; 
+  executable     : putline ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < functional > 
+  Preproc Stmt   : # include "TestUtilities.h" 
+  Preproc Stmt   : # include "../StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # ifdef TEST_TESTUTILITIES 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : bool test_always_passes ( ) { 
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool test_always_fails ( ) { 
+  executable     : return false ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool test_always_throws ( ) { 
+  data declar    : std :: exception ex ( "exception\n         -- msg: this test always throws -- " ) ; 
+  executable     : throw ( ex ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Title ( "Testing TestUtilities Package" ) ; 
+  executable     : putline ( ) ; 
+  data declar    : TestExecutive ex ; 
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts1 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts2 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts3 { 
+--- stack size = 2 ---
+  executable     : ex . registerTest ( ts1 ) ; 
+  executable     : ex . registerTest ( ts2 ) ; 
+  executable     : ex . registerTest ( ts3 ) ; 
+  executable     : if ( result == true ) std :: cout << "\n  all tests passed" ; 
+  executable     : else std :: cout << "\n  at least one test failed" ; 
+  executable     : putline ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include "CoreRepository.h" 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < fstream > 
+  Preproc Stmt   : # include < vector > 
+  Preproc Stmt   : # include < windows . h > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < utility > 
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < locale > 
+  using declar   : using namespace Repository ; 
+  Preproc Stmt   : # ifdef TEST_COREREPO 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  data declar    : CoreRepo repo ; 
+  data declar    : std :: vector < std :: string > included ; 
+  executable     : included . push_back ( "DataTime.h" ) ; 
+  executable     : included . push_back ( "DbCore.h" ) ; 
+  executable     : repo . Checkin ( "../ClientFile/Conditions.h" , "CSE687_Project1" , true , "header file for DBQuery.cpp" , included ) ; 
+  executable     : repo . Checkout ( "Conditions.h" ) ; 
+  executable     : repo . Browse ( "../Repository/Conditions.h.v1" ) ; 
+  executable     : repo . Browse ( "../CheckoutFile/Conditions.h" ) ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+--- stack size = 2 ---
+  function def   : C   S   E   6   8   7  _   P   r   o   j   e   c   t   2   .   c   p   p     :     D   e   f   i   n   e   s     t   h   e     e   n   t   r   y     p   o   i   n   t     f   o   r     t   h   e     c   o   n   s   o   l   e     a   p   p   l   i   c   a   t   i   o   n   .      /  /          #   i   n   c   l   u   d   e     " s t d a f x . h "               i   n   t     m   a   i   n   (   )       { 
+  executable     : r   e   t   u   r   n     0   ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # include "DateTime.h" 
+  Preproc Stmt   : # include "../Utilities/StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < iomanip > 
+  Preproc Stmt   : # include < sstream > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < unordered_map > 
+--- stack size = 2 ---
+  function def   : char * DateTime :: ctime ( const std :: time_t * pTime ) { 
+  data declar    : const rsize_t buffSize = 26 ; 
+  executable     : static char buffer [ buffSize ] ; 
+  data declar    : errno_t err = ctime_s ( buffer , buffSize , pTime ) ; 
+  executable     : return buffer ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: tm * DateTime :: localtime ( const std :: time_t * pTime ) { 
+  data declar    : static std :: tm result ; 
+  data declar    : errno_t err = localtime_s ( & result , pTime ) ; 
+  executable     : return & result ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( ) { 
+  executable     : tp_ = SysClock :: now ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : int readDateTimePart ( int & part , std :: istringstream & in ) { 
+  executable     : if ( in . peek ( ) == ':' ) in . get ( ) ; 
+  executable     : in >> part ; 
+  executable     : if ( in . good ( ) ) return part ; 
+  default:       : return - 1 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( std :: string dtStr ) { 
+--- stack size = 3 ---
+  default:       : static std :: unordered_map < std :: string , size_t > months = { 
+--- stack size = 4 ---
+  default:       : { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  default:       : , { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+  data declar    : std :: istringstream in ( dtStr ) ; 
+  executable     : std :: string day , month ; 
+  executable     : in >> day ; 
+  executable     : in >> month ; 
+  executable     : if ( ! in . good ( ) ) throw std :: exception ( "invalid DateTime string" ) ; 
+  data declar    : std :: tm date ; 
+  executable     : date . tm_mon = months [ month ] - 1 ; 
+  executable     : readDateTimePart ( date . tm_mday , in ) ; 
+  executable     : readDateTimePart ( date . tm_hour , in ) ; 
+  executable     : readDateTimePart ( date . tm_min , in ) ; 
+  executable     : readDateTimePart ( date . tm_sec , in ) ; 
+  executable     : readDateTimePart ( date . tm_year , in ) ; 
+  executable     : date . tm_year -= 1900 ; 
+  executable     : date . tm_isdst = - 1 ; 
+  data declar    : std :: time_t time = std :: mktime ( & date ) ; 
+  executable     : if ( time == - 1 ) throw "invalid system time" ; 
+  executable     : tp_ = SysClock :: from_time_t ( time ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: operator std :: string ( ) { 
+  executable     : return time ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: DateTime ( const DateTime :: TimePoint & tp ) : tp_ ( tp ) { 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: TimePoint DateTime :: makeTime ( size_t year , size_t mon , size_t day , size_t hour , size_t min , size_t sec ) { 
+  executable     : struct std :: tm t ; 
+  executable     : t . tm_sec = sec ; 
+  executable     : t . tm_min = min ; 
+  executable     : t . tm_hour = hour ; 
+  executable     : t . tm_mday = day ; 
+  executable     : t . tm_mon = mon - 1 ; 
+  executable     : t . tm_year = year - 1900 ; 
+  executable     : t . tm_isdst = - 1 ; 
+  data declar    : std :: time_t time = std :: mktime ( & t ) ; 
+--- stack size = 3 ---
+  control def    : if ( time == - 1 ) { 
+  data declar    : throw "invalid system time" ; 
+--- stack size = 2 ---
+  executable     : return SysClock :: from_time_t ( time ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: Duration DateTime :: makeDuration ( size_t hour , size_t min , size_t sec , size_t millisec ) { 
+  data declar    : Duration dur = std :: chrono :: milliseconds ( millisec ) + std :: chrono :: seconds ( sec ) + std :: chrono :: minutes ( min ) + std :: chrono :: hours ( hour ) ; 
+  executable     : return dur ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string DateTime :: now ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp ) ; 
+  data declar    : std :: string ts = ctime ( & t ) ; 
+  executable     : ts . resize ( ts . size ( ) - 1 ) ; 
+  executable     : return ts ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime :: TimePoint DateTime :: timepoint ( ) { 
+  executable     : return tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: ticks ( ) { 
+  data declar    : auto int_sec = std :: chrono :: duration_cast < std :: chrono :: seconds > ( tp_ . time_since_epoch ( ) ) ; 
+  default:       : return static_cast < size_t > ( int_sec . count ( ) ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string DateTime :: time ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: string ts = ctime ( & t ) ; 
+  executable     : ts . resize ( ts . size ( ) - 1 ) ; 
+  executable     : return ts ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator < ( const DateTime & dt ) { 
+  executable     : return tp_ < dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator > ( const DateTime & dt ) { 
+  executable     : return tp_ > dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool DateTime :: operator == ( const DateTime & dt ) { 
+  executable     : return tp_ == dt . tp_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator += ( const DateTime :: Duration & dur ) { 
+  executable     : tp_ += dur ; 
+  executable     : return * this ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator + ( const DateTime :: Duration & dur ) { 
+  executable     : return DateTime ( tp_ + dur ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator -= ( const DateTime :: Duration & dur ) { 
+  executable     : tp_ -= dur ; 
+  executable     : return * this ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : DateTime DateTime :: operator - ( const DateTime :: Duration & dur ) { 
+  executable     : return DateTime ( tp_ - dur ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: year ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_year ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: month ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_mon ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: day ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_mday ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: hour ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_hour ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: minute ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_min ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t DateTime :: second ( ) { 
+  data declar    : std :: time_t t = SysClock :: to_time_t ( tp_ ) ; 
+  data declar    : std :: tm tm = * localtime ( & t ) ; 
+  executable     : return tm . tm_sec ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifdef TEST_DATETIME 
+  Preproc Stmt   : # include < iostream > 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Utilities :: Title ( "Testing DateTime class" ) ; 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : DateTime dt ; 
+  data declar    : DateTime now ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : std :: cout << "\n\n" ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+--- stack size = 2 ---
+  function def   : <     r   e   d   u   c   e     t   h   e     n   u   m   b   e   r     o   f     c   h   a   r   a   c   t   e   r   s     t   o     t   y   p   e     >  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -           a   u   t   o     p   u   t   L   i   n   e    =     [   ]   (   s   i   z   e  _   t     n    =     1   ,     s   t   d   :   :   o   s   t   r   e   a   m  &     o   u   t    =     s   t   d   :   :   c   o   u   t   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   p   u   t   l   i   n   e   (   n   ,     o   u   t   )   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : t   e   s   t     f   u   n   c   t   i   o   n   s          /  /  -  -  -  -   <     d   e   m   o     s   e   c   o   n   d     p   a   r   t     o   f     r   e   q   u   i   r   e   m   e   n   t    #   3     >  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -           b   o   o   l     t   e   s   t   R   3   b   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   t   i   t   l   e   (   " D e m o n s t r a t i n g   R e q u i r e m e n t   # 3 b   -   c r e a t i n g   D b C o r e "   )   ; 
+  executable     : N   o   S   Q   L   D   B   <   s   t   d   :   :   s   t   r   i   n   g   >     n   o   s   q   l   1   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >     d   b   ; 
+  executable     : D   b   E   l   e   m   e   n   t   <   s   t   d   :   :   s   t   r   i   n   g   >     d   e   m   o   E   l   e   m    =     d   b   [   " F a w c e t t "   ]   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A m m a r "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   d   e   s   c   r   i   p   (   " T A   f o r   C S E 6 8 7 "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " Y o u   s h o u l d   t r y   . . . "   )   ; 
+  executable     : d   b   [   " S a l m a n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S a l m a n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : i   f     (  !   d   b   .   c   o   n   t   a   i   n   s   (   " S a l m a n "   )   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " J i a n a n "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " D r .   F a w c e t t   s a i d   . . . "   )   ; 
+  executable     : d   b   [   " S u n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S u n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " N i k h i l "   )   ; 
+  executable     : d   b   [   " P r a s h a r "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " P a r a s h a r "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " P r a n j u l "   )   ; 
+  executable     : d   b   [   " A r o r a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A k a s h "   )   ; 
+  executable     : d   b   [   " A n j a n a p p a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : i   f     (   d   b   .   s   i   z   e   (   )    !  =     6   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     a f t e r   a d d i n g   e l e m e n t s   w i t h   k e y s :   "   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >   :   :   K   e   y   s     k   e   y   s    =     d   b   .   k   e   y   s   (   )   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     s h o w i n g   a l l   t h e   d a t a b a s e   e l e m e n t s : "   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     d a t a b a s e   k e y s   a r e :   "   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : r   e   t   u   r   n     t   r   u   e   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : i   n   t     m   a   i   n   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   T   i   t   l   e   (   " T e s t i n g   D b C o r e   -   H e   s a i d ,   s h e   s a i d   d a t a b a s e "   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : T   e   s   t   E   x   e   c   u   t   i   v   e     e   x   ; 
+--- stack size = 3 ---
+  default:       : d   e   f   i   n   e     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     t   e   s   t     f   u   n   c   t   i   o   n     a   n   d     m   e   s   s   a   g   e         T   e   s   t   E   x   e   c   u   t   i   v   e   :   :   T   e   s   t   S   t   r     t   s   3   b   { 
+--- stack size = 2 ---
+  executable     : r   e   g   i   s   t   e   r     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     T   e   s   t   E   x   e   c   u   t   i   v   e     i   n   s   t   a   n   c   e   ,     e   x         e   x   .   r   e   g   i   s   t   e   r   T   e   s   t   (   t   s   3   b   )   ; 
+  executable     : r   u   n     t   e   s   t   s         b   o   o   l     r   e   s   u   l   t    =     e   x   .   d   o   T   e   s   t   s   (   )   ; 
+  executable     : i   f     (   r   e   s   u   l   t    =  =     t   r   u   e   )           s   t   d   :   :   c   o   u   t     <   <     " \ n     a l l   t e s t s   p a s s e d "   ; 
+  executable     : e   l   s   e           s   t   d   :   :   c   o   u   t     <   <     " \ n     a t   l e a s t   o n e   t e s t   f a i l e d "   ; 
+  executable     : p   u   t   L   i   n   e   (   2   )   ; 
+  executable     : r   e   t   u   r   n     0   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : a   u   t   o     p   u   t   L   i   n   e    =     [   ]   (   s   i   z   e  _   t     n    =     1   ,     s   t   d   :   :   o   s   t   r   e   a   m  &     o   u   t    =     s   t   d   :   :   c   o   u   t   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   p   u   t   l   i   n   e   (   n   ,     o   u   t   )   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : b   o   o   l     t   e   s   t   R   3   b   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   t   i   t   l   e   (   " D e m o n s t r a t i n g   R e q u i r e m e n t   # 3 b   -   c r e a t i n g   D b C o r e "   )   ; 
+  executable     : N   o   S   Q   L   D   B   <   s   t   d   :   :   s   t   r   i   n   g   >     n   o   s   q   l   1   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >     d   b   ; 
+  executable     : D   b   E   l   e   m   e   n   t   <   s   t   d   :   :   s   t   r   i   n   g   >     d   e   m   o   E   l   e   m    =     d   b   [   " F a w c e t t "   ]   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A m m a r "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   d   e   s   c   r   i   p   (   " T A   f o r   C S E 6 8 7 "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " Y o u   s h o u l d   t r y   . . . "   )   ; 
+  executable     : d   b   [   " S a l m a n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S a l m a n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : i   f     (  !   d   b   .   c   o   n   t   a   i   n   s   (   " S a l m a n "   )   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " J i a n a n "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " D r .   F a w c e t t   s a i d   . . . "   )   ; 
+  executable     : d   b   [   " S u n "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " S u n "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " N i k h i l "   )   ; 
+  executable     : d   b   [   " P r a s h a r "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : n   o   s   q   l   1   .   a   d   d   (   " P a r a s h a r "   ,     d   e   m   o   E   l   e   m   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " P r a n j u l "   )   ; 
+  executable     : d   b   [   " A r o r a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : d   e   m   o   E   l   e   m   .   p   a   y   L   o   a   d   (   " T a n m i n g   C u i "   )   ; 
+  executable     : d   e   m   o   E   l   e   m   .   n   a   m   e   (   " A k a s h "   )   ; 
+  executable     : d   b   [   " A n j a n a p p a "   ]    =     d   e   m   o   E   l   e   m   ; 
+  executable     : i   f     (   d   b   .   s   i   z   e   (   )    !  =     6   )   r   e   t   u   r   n     f   a   l   s   e   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     a f t e r   a d d i n g   e l e m e n t s   w i t h   k e y s :   "   ; 
+  executable     : D   b   C   o   r   e   <   s   t   d   :   :   s   t   r   i   n   g   >   :   :   K   e   y   s     k   e   y   s    =     d   b   .   k   e   y   s   (   )   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     s h o w i n g   a l l   t h e   d a t a b a s e   e l e m e n t s : "   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n     d a t a b a s e   k e y s   a r e :   "   ; 
+  executable     : s   h   o   w   K   e   y   s   (   d   b   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : Q   u   e   r   y   <   s   t   d   :   :   s   t   r   i   n   g   >     q   1   (   n   o   s   q   l   1   )   ; 
+  executable     : q   1   .   f   r   o   m   (   " S u n "   )   .   s   h   o   w   r   e   s   (   )   ; 
+  executable     : C   o   n   d   i   t   i   o   n   s   <   s   t   d   :   :   s   t   r   i   n   g   >     t   t   ; 
+  executable     : t   t   .   n   a   m   e   (   " J i a n a n "   )   ; 
+  executable     : Q   u   e   r   y   <   s   t   d   :   :   s   t   r   i   n   g   >     q   2   (   n   o   s   q   l   1   )   ; 
+  executable     : q   2   .   s   e   l   e   c   t   (   t   t   )   .   s   h   o   w   r   e   s   (   )   ; 
+  executable     : r   e   t   u   r   n     t   r   u   e   ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : i   n   t     m   a   i   n   (   )       { 
+  executable     : U   t   i   l   i   t   i   e   s   :   :   T   i   t   l   e   (   " T e s t i n g   D b C o r e   -   H e   s a i d ,   s h e   s a i d   d a t a b a s e "   )   ; 
+  executable     : p   u   t   L   i   n   e   (   )   ; 
+  executable     : T   e   s   t   E   x   e   c   u   t   i   v   e     e   x   ; 
+  executable     : s   t   d   :   :   c   o   u   t     <   <     " \ n "   ; 
+--- stack size = 3 ---
+  default:       : d   e   f   i   n   e     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     t   e   s   t     f   u   n   c   t   i   o   n     a   n   d     m   e   s   s   a   g   e         T   e   s   t   E   x   e   c   u   t   i   v   e   :   :   T   e   s   t   S   t   r     t   s   3   b   { 
+--- stack size = 2 ---
+  executable     : r   e   g   i   s   t   e   r     t   e   s   t     s   t   r   u   c   t   u   r   e   s     w   i   t   h     T   e   s   t   E   x   e   c   u   t   i   v   e     i   n   s   t   a   n   c   e   ,     e   x         e   x   .   r   e   g   i   s   t   e   r   T   e   s   t   (   t   s   3   b   )   ; 
+  executable     : r   u   n     t   e   s   t   s             b   o   o   l     r   e   s   u   l   t    =     e   x   .   d   o   T   e   s   t   s   (   )   ; 
+  executable     : i   f     (   r   e   s   u   l   t    =  =     t   r   u   e   )           s   t   d   :   :   c   o   u   t     <   <     " \ n   a l l   t e s t s   p a s s e d "   ; 
+  executable     : e   l   s   e           s   t   d   :   :   c   o   u   t     <   <     " \ n   a t   l e a s t   o n e   t e s t   f a i l e d "   ; 
+  executable     : p   u   t   L   i   n   e   (   2   )   ; 
+  executable     : r   e   t   u   r   n     0   ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # include "file.h" 
+  using declar   : using namespace Repository ; 
+--- stack size = 2 ---
+  function def   : Block :: Block ( Byte * beg , Byte * end ) : bytes_ ( beg , end ) { 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void Block :: push_back ( Byte b ) { 
+  executable     : bytes_ . push_back ( b ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : Byte & Block :: operator [ ] ( size_t i ) { 
+  executable     : if ( i < 0 || bytes_ . size ( ) < = i ) throw std :: runtime_error ( "index out of range in Block" ) ; 
+  executable     : return bytes_ [ i ] ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : Byte Block :: operator [ ] ( size_t i ) const { 
+  executable     : if ( i < 0 || bytes_ . size ( ) < = i ) throw std :: runtime_error ( "index out of range in Block" ) ; 
+  executable     : return bytes_ [ i ] ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Block :: operator == ( const Block & block ) const { 
+  executable     : return bytes_ == block . bytes_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Block :: operator != ( const Block & block ) const { 
+  executable     : return bytes_ != block . bytes_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t Block :: size ( ) const { 
+  executable     : return bytes_ . size ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : File :: File ( const std :: string & filespec ) : name_ ( filespec ) , pIStream ( nullptr ) , pOStream ( nullptr ) , dirn_ ( in ) , typ_ ( text ) , good_ ( true ) { 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : File :: ~ File ( ) { 
+--- stack size = 3 ---
+  control def    : if ( pIStream ) { 
+  data declar    : delete pIStream ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : if ( pOStream ) { 
+  data declar    : delete pOStream ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool File :: open ( direction dirn , type typ ) { 
+  executable     : dirn_ = dirn ; 
+  executable     : typ_ = typ ; 
+  executable     : good_ = true ; 
+--- stack size = 3 ---
+  control def    : if ( dirn == in ) { 
+--- stack size = 4 ---
+  control def    : if ( ! ( * pIStream ) . good ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : else { 
+--- stack size = 4 ---
+  control def    : if ( ! ( * pOStream ) . good ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+  executable     : return good_ ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string File :: getLine ( bool keepNewLines ) { 
+  executable     : if ( pIStream == nullptr || ! pIStream - > good ( ) ) throw std :: runtime_error ( "input stream not open" ) ; 
+  executable     : if ( typ_ == binary ) throw std :: runtime_error ( "getting text line from binary file" ) ; 
+  executable     : if ( dirn_ == out ) throw std :: runtime_error ( "reading output file" ) ; 
+  data declar    : std :: string store ; 
+--- stack size = 3 ---
+  control def    : while ( true ) { 
+--- stack size = 4 ---
+  control def    : if ( ch == '\n' ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string File :: readAll ( bool keepNewLines ) { 
+  data declar    : std :: string store ; 
+--- stack size = 3 ---
+  control def    : while ( true ) { 
+  data declar    : std :: locale loc ; 
+--- stack size = 2 ---
+  executable     : return store ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: putLine ( const std :: string & s , bool wantReturn ) { 
+  executable     : if ( pOStream == nullptr || ! pOStream - > good ( ) ) throw std :: runtime_error ( "output stream not open" ) ; 
+  executable     : if ( typ_ == binary ) throw std :: runtime_error ( "writing text line to binary file" ) ; 
+  executable     : if ( dirn_ == in ) throw std :: runtime_error ( "writing input file" ) ; 
+  executable     : for ( size_t i = 0 ; i < s . size ( ) ; ++ i ) pOStream - > put ( s [ i ] ) ; 
+  executable     : if ( wantReturn ) pOStream - > put ( '\n' ) ; 
+  executable     : pOStream - > flush ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : Block File :: getBlock ( size_t size ) { 
+  executable     : if ( pIStream == nullptr || ! pIStream - > good ( ) ) throw std :: runtime_error ( "input stream not open" ) ; 
+  executable     : if ( typ_ != binary ) throw std :: runtime_error ( "reading binary from text file" ) ; 
+  executable     : if ( dirn_ == out ) throw std :: runtime_error ( "reading output file" ) ; 
+  data declar    : Block blk ; 
+--- stack size = 3 ---
+  control def    : if ( pIStream ) { 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < size ; ++ i ) { 
+  data declar    : Byte b ; 
+--- stack size = 3 ---
+--- stack size = 2 ---
+  executable     : return blk ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: putBlock ( const Block & blk ) { 
+  executable     : if ( pOStream == nullptr || ! pOStream - > good ( ) ) throw std :: runtime_error ( "output stream not open" ) ; 
+  executable     : if ( typ_ != binary ) throw std :: runtime_error ( "writing binary to text file" ) ; 
+  executable     : if ( dirn_ == in ) throw std :: runtime_error ( "writing input file" ) ; 
+  executable     : if ( ! pOStream - > good ( ) ) return ; 
+--- stack size = 3 ---
+  control def    : for ( size_t i = 0 ; i < blk . size ( ) ; ++ i ) { 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : size_t File :: getBuffer ( size_t bufLen , File :: byte * buffer ) { 
+  executable     : if ( pIStream == nullptr || ! pIStream - > good ( ) ) throw std :: runtime_error ( "input stream not open" ) ; 
+  executable     : if ( typ_ != binary ) throw std :: runtime_error ( "reading binary from text file" ) ; 
+  executable     : if ( dirn_ == out ) throw std :: runtime_error ( "reading output file" ) ; 
+  data declar    : size_t count = 0 ; 
+--- stack size = 3 ---
+  control def    : while ( pIStream - > good ( ) ) { 
+--- stack size = 2 ---
+  executable     : if ( ! pIStream - > good ( ) ) -- count ; 
+  executable     : return count ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: putBuffer ( size_t bufLen , File :: byte * buffer ) { 
+  executable     : if ( pOStream == nullptr || ! pOStream - > good ( ) ) throw std :: runtime_error ( "output stream not open" ) ; 
+  executable     : if ( typ_ != binary ) throw std :: runtime_error ( "writing binary to text file" ) ; 
+  executable     : if ( dirn_ == in ) throw std :: runtime_error ( "writing input file" ) ; 
+  executable     : if ( ! pOStream - > good ( ) ) return ; 
+  data declar    : size_t count = 0 ; 
+--- stack size = 3 ---
+  control def    : while ( pOStream - > good ( ) ) { 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool File :: isGood ( ) { 
+  executable     : if ( ! good_ ) return false ; 
+  executable     : if ( pIStream != nullptr ) return ( good_ = pIStream - > good ( ) ) ; 
+  executable     : if ( pOStream != nullptr ) return ( good_ = pOStream - > good ( ) ) ; 
+  executable     : return ( good_ = false ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: flush ( ) { 
+  executable     : if ( pOStream != nullptr && pOStream - > good ( ) ) pOStream - > flush ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: clear ( ) { 
+  executable     : if ( pIStream != nullptr ) pIStream - > clear ( ) ; 
+  executable     : if ( pOStream != nullptr ) pOStream - > clear ( ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void File :: close ( ) { 
+  executable     : File :: flush ( ) ; 
+--- stack size = 3 ---
+  control def    : if ( pIStream != nullptr ) { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : if ( pOStream ) { 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool File :: exists ( const std :: string & file ) { 
+  executable     : return :: GetFileAttributesA ( file . c_str ( ) ) != INVALID_FILE_ATTRIBUTES ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool File :: copy ( const std :: string & src , const std :: string & dst , bool failIfExists ) { 
+  executable     : return :: CopyFileA ( src . c_str ( ) , dst . c_str ( ) , failIfExists ) != 0 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool File :: remove ( const std :: string & file ) { 
+  executable     : return :: DeleteFileA ( file . c_str ( ) ) != 0 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: toLower ( const std :: string & src ) { 
+  data declar    : std :: string temp ; 
+  executable     : for ( size_t i = 0 ; i < src . length ( ) ; ++ i ) temp += tolower ( src [ i ] ) ; 
+  executable     : return temp ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: toUpper ( const std :: string & src ) { 
+  data declar    : std :: string temp ; 
+  executable     : for ( size_t i = 0 ; i < src . length ( ) ; ++ i ) temp += toupper ( src [ i ] ) ; 
+  executable     : return temp ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: getName ( const std :: string & fileSpec , bool withExt ) { 
+  data declar    : size_t pos = fileSpec . find_last_of ( "/" ) ; 
+--- stack size = 3 ---
+  control def    : if ( pos > = fileSpec . length ( ) ) { 
+--- stack size = 4 ---
+  control def    : if ( pos > = fileSpec . length ( ) ) { 
+--- stack size = 5 ---
+  control def    : else { 
+  data declar    : size_t pos = fileSpec . find ( "." ) ; 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+  executable     : if ( withExt ) return fileSpec . substr ( pos + 1 , fileSpec . length ( ) - pos ) ; 
+--- stack size = 3 ---
+  control def    : else { 
+  data declar    : size_t pos2 = fileSpec . find ( "." , pos ) ; 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: getExt ( const std :: string & fileSpec ) { 
+  data declar    : size_t pos1 = fileSpec . find_last_of ( '/' ) ; 
+  data declar    : size_t pos2 = fileSpec . find_last_of ( '\\' ) ; 
+  data declar    : size_t pos = fileSpec . find_last_of ( '.' ) ; 
+--- stack size = 3 ---
+  control def    : if ( pos1 < fileSpec . length ( ) || pos2 < fileSpec . length ( ) ) { 
+--- stack size = 2 ---
+  executable     : if ( 0 < = pos && pos < fileSpec . length ( ) ) return toLower ( fileSpec . substr ( pos + 1 , fileSpec . length ( ) - pos ) ) ; 
+  executable     : return std :: string ( "" ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: getPath ( const std :: string & fileSpec ) { 
+  data declar    : size_t pos = fileSpec . find_last_of ( "/" ) ; 
+  executable     : if ( pos > = fileSpec . length ( ) ) pos = fileSpec . find_last_of ( "\\" ) ; 
+  executable     : if ( pos > = fileSpec . length ( ) ) return "." ; 
+  executable     : if ( fileSpec . find ( "." , pos + 1 ) ) return fileSpec . substr ( 0 , pos + 1 ) ; 
+  executable     : return fileSpec ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: getFullFileSpec ( const std :: string & fileSpec ) { 
+  data declar    : const size_t BufSize = 256 ; 
+  executable     : char buffer [ BufSize ] ; 
+  executable     : char filebuffer [ BufSize ] ; 
+  data declar    : char * name = filebuffer ; 
+  executable     : :: GetFullPathNameA ( fileSpec . c_str ( ) , BufSize , buffer , & name ) ; 
+  executable     : return std :: string ( buffer ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Path :: fileSpec ( const std :: string & path , const std :: string & name ) { 
+  data declar    : std :: string fs ; 
+  executable     : if ( path [ len - 1 ] == '/' || path [ len - 1 ] == '\\' ) fs = path + name ; 
+--- stack size = 3 ---
+  control def    : else { 
+--- stack size = 2 ---
+  executable     : return fs ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string Directory :: getCurrentDirectory ( ) { 
+  executable     : char buffer [ MAX_PATH ] ; 
+  default:       : :: GetCurrentDirectoryA ( MAX_PATH , buffer ) ; 
+  executable     : return std :: string ( buffer ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Directory :: setCurrentDirectory ( const std :: string & path ) { 
+  executable     : return :: SetCurrentDirectoryA ( path . c_str ( ) ) != 0 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: vector < std :: string > Directory :: getFiles ( const std :: string & path , const std :: string & pattern ) { 
+  data declar    : std :: vector < std :: string > files ; 
+  data declar    : FileSystemSearch fss ; 
+  data declar    : std :: string file = fss . firstFile ( path , pattern ) ; 
+  executable     : if ( file . size ( ) == 0 ) return files ; 
+  executable     : files . push_back ( file ) ; 
+--- stack size = 3 ---
+  control def    : while ( true ) { 
+--- stack size = 2 ---
+  executable     : return files ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: vector < std :: string > Directory :: getDirectories ( const std :: string & path , const std :: string & pattern ) { 
+  data declar    : std :: vector < std :: string > dirs ; 
+  data declar    : FileSystemSearch fss ; 
+  data declar    : std :: string dir = fss . firstDirectory ( path , pattern ) ; 
+  executable     : if ( dir . size ( ) == 0 ) return dirs ; 
+  executable     : dirs . push_back ( dir ) ; 
+--- stack size = 3 ---
+  control def    : while ( true ) { 
+--- stack size = 2 ---
+  executable     : return dirs ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Directory :: create ( const std :: string & path ) { 
+  executable     : return :: CreateDirectoryA ( path . c_str ( ) , NULL ) == 0 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Directory :: exists ( const std :: string & path ) { 
+  data declar    : DWORD dwAttrib = GetFileAttributesA ( path . c_str ( ) ) ; 
+  executable     : return ( dwAttrib != INVALID_FILE_ATTRIBUTES && ( dwAttrib & FILE_ATTRIBUTE_DIRECTORY ) ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool Directory :: remove ( const std :: string & path ) { 
+  executable     : return :: RemoveDirectoryA ( path . c_str ( ) ) == 0 ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string FileSystemSearch :: firstFile ( const std :: string & path , const std :: string & pattern ) { 
+  executable     : hFindFile = :: FindFirstFileA ( Path :: fileSpec ( path , pattern ) . c_str ( ) , pFindFileData ) ; 
+--- stack size = 3 ---
+  control def    : if ( hFindFile != INVALID_HANDLE_VALUE ) { 
+--- stack size = 2 ---
+  executable     : return "" ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string FileSystemSearch :: nextFile ( ) { 
+  executable     : while ( :: FindNextFileA ( hFindFile , pFindFileData ) ) if ( ! ( pFindFileData - > dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY ) ) return pFindFileData - > cFileName ; 
+  executable     : return "" ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string FileSystemSearch :: firstDirectory ( const std :: string & path , const std :: string & pattern ) { 
+  executable     : hFindFile = :: FindFirstFileA ( Path :: fileSpec ( path , pattern ) . c_str ( ) , pFindFileData ) ; 
+--- stack size = 3 ---
+  control def    : if ( hFindFile != INVALID_HANDLE_VALUE ) { 
+--- stack size = 2 ---
+  executable     : return "" ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifdef TEST_FILEMGR 
+--- stack size = 2 ---
+  function def   : void title ( const std :: string & title , char ch = '=' ) { 
+  executable     : std :: cout << "\n  " << title ; 
+  executable     : std :: cout << "\n " << std :: string ( title . size ( ) + 2 , ch ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : title ( "Demonstrate File class operations" , '=' ) ; 
+  executable     : std :: cout << "\n" ; 
+  default:       : File me ( "../CoreRepository/CoreRepository.h" ) ; 
+  executable     : me . open ( File :: in , File :: binary ) ; 
+  executable     : if ( ! Directory :: exists ( "c:/temp" ) ) Directory :: create ( "c:/temp" ) ; 
+  executable     : std :: cout << "\n  copying " << me . name ( ) . c_str ( ) << " to c:/temp" ; 
+--- stack size = 3 ---
+  control def    : if ( ! me . isGood ( ) ) { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : else { 
+--- stack size = 4 ---
+  control def    : if ( you . isGood ( ) ) { 
+--- stack size = 5 ---
+  control def    : while ( me . isGood ( ) ) { 
+  data declar    : static size_t count = 0 ; 
+  data declar    : Block b = me . getBlock ( 1024 ) ; 
+--- stack size = 6 ---
+  control def    : if ( ++ count < 10 ) { 
+--- stack size = 5 ---
+--- stack size = 6 ---
+  control def    : if ( b . size ( ) < 1024 ) { 
+--- stack size = 5 ---
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include "../Utilities/StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # include "../Utilities/TestUtilities/TestUtilities.h" 
+  Preproc Stmt   : # include "../DbCore/DbCore.h" 
+  Preproc Stmt   : # include "../DBQuery/Conditions.h" 
+  Preproc Stmt   : # include "../Filemgr/file.h" 
+  Preproc Stmt   : # include "../CoreRepository/CoreRepository.h" 
+  using declar   : using namespace Repository ; 
+--- stack size = 2 ---
+  function def   : auto putLine = [ ] ( size_t n = 1 , std :: ostream & out = std :: cout ) { 
+  executable     : Utilities :: putline ( n , out ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR1 ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR2 ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+  data declar    : CoreRepo testrepo ; 
+--- stack size = 2 ---
+  function def   : bool testR3 ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: vector < std :: string > currdirs = Directory :: getDirectories ( "../" ) ; 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR4a ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: string tocheckin = "../ClientFile/CSE686_Assignment2" ; 
+  data declar    : std :: vector < std :: string > currfiles = Directory :: getFiles ( tocheckin ) ; 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+  data declar    : std :: vector < std :: string > child1 ; 
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR4b ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: string tocheckin = "../ClientFile/CSE687_Project1" ; 
+  data declar    : std :: vector < std :: string > currfiles = Directory :: getFiles ( tocheckin ) ; 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+  data declar    : std :: vector < std :: string > child1 ; 
+--- stack size = 5 ---
+  control def    : if ( std :: string ( currfiles [ i ] . c_str ( ) ) == "DbCore.cpp" ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR4c ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: string tocheckin = "../ClientFile/CSE687_Project1" ; 
+  data declar    : std :: vector < std :: string > currfiles = Directory :: getFiles ( tocheckin ) ; 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+  data declar    : std :: vector < std :: string > child1 ; 
+--- stack size = 5 ---
+  control def    : if ( std :: string ( currfiles [ i ] . c_str ( ) ) == "DbCore.cpp" ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR4d ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: string tocheckin = "../ClientFile/CSE681_Project4" ; 
+  data declar    : std :: vector < std :: string > currfiles = Directory :: getFiles ( tocheckin ) ; 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+  data declar    : std :: vector < std :: string > child1 ; 
+--- stack size = 5 ---
+  control def    : if ( std :: string ( currfiles [ i ] . c_str ( ) ) == "Motherbuilder.cs" ) { 
+--- stack size = 4 ---
+--- stack size = 5 ---
+  control def    : if ( std :: string ( currfiles [ i ] . c_str ( ) ) == "Childbuilder.cs" ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR5a ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : Conditions < FileInfo > pack ; 
+  data declar    : NoSQLDB < FileInfo > res = origin . select ( pack ) . query ( ) ; 
+--- stack size = 4 ---
+  control def    : for ( auto item : res . nosqldb ( ) ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool testR5b ( ) { 
+--- stack size = 3 ---
+  control def    : try { 
+  data declar    : std :: string thelatest = testrepo . findlatest ( "DbCore.h" ) ; 
+  data declar    : std :: vector < std :: string > currfiles = Directory :: getFiles ( testrepo . CheckoutPath ( ) ) ; 
+--- stack size = 4 ---
+  control def    : for ( size_t i = 0 ; i < currfiles . size ( ) ; ++ i ) { 
+--- stack size = 3 ---
+--- stack size = 2 ---
+--- stack size = 3 ---
+  control def    : catch ( std :: exception & ex ) { 
+--- stack size = 2 ---
+  executable     : return true ; 
+--- stack size = 1 ---
+  data declar    : TestExecutive ex ; 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Utilities :: Title ( "Testing CSE687 Project #2" ) ; 
+  executable     : putLine ( ) ; 
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts1 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts2 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts3 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts4a { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts4b { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts4c { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts4d { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts5a { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts5b { 
+--- stack size = 2 ---
+  executable     : ex . registerTest ( ts1 ) ; 
+  executable     : ex . registerTest ( ts2 ) ; 
+  executable     : ex . registerTest ( ts3 ) ; 
+  executable     : ex . registerTest ( ts4a ) ; 
+  executable     : ex . registerTest ( ts4b ) ; 
+  executable     : ex . registerTest ( ts4c ) ; 
+  executable     : ex . registerTest ( ts4d ) ; 
+  executable     : ex . registerTest ( ts5a ) ; 
+  executable     : ex . registerTest ( ts5b ) ; 
+  executable     : if ( result == true ) std :: cout << "\n  all tests passed" ; 
+  executable     : else std :: cout << "\n  at least one test failed" ; 
+  executable     : putLine ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include "Utilities.h" 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : std :: function < void ( const std :: string & ) > Title = [ ] ( auto src ) { 
+  executable     : StringHelper :: Title ( src , '=' ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: function < void ( const std :: string & ) > title = [ ] ( auto src ) { 
+  executable     : StringHelper :: Title ( src , '-' ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void StringHelper :: title ( const std :: string & src ) { 
+  executable     : std :: cout << "\n  " << src ; 
+  executable     : std :: cout << "\n " << std :: string ( src . size ( ) + 2 , '-' ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void StringHelper :: Title ( const std :: string & src , char underline ) { 
+  executable     : std :: cout << "\n  " << src ; 
+  executable     : std :: cout << "\n " << std :: string ( src . size ( ) + 2 , underline ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: vector < std :: string > StringHelper :: split ( const std :: string & src ) { 
+  data declar    : std :: vector < std :: string > accum ; 
+  data declar    : std :: string temp ; 
+  data declar    : size_t index = 0 ; 
+--- stack size = 3 ---
+  control def    : do { 
+--- stack size = 4 ---
+  control def    : while ( ( isspace ( src [ index ] ) || src [ index ] == ',' ) && src [ index ] != '\n' ) { 
+--- stack size = 5 ---
+  control def    : if ( temp . size ( ) > 0 ) { 
+--- stack size = 4 ---
+--- stack size = 3 ---
+--- stack size = 2 ---
+  executable     : while ( index ++ < src . size ( ) ) ; 
+  executable     : if ( temp . size ( ) > 0 ) accum . push_back ( temp ) ; 
+  executable     : return accum ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : void Utilities :: putline ( ) { 
+  executable     : std :: cout << "\n" ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifdef TEST_UTILITIES 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Title ( "Testing Utilities Package" ) ; 
+  executable     : putline ( ) ; 
+  executable     : title ( "test StringHelper::split(std::string)" ) ; 
+  data declar    : std :: string test = "a, \n, bc, de, efg, i, j k lm nopq rst" ; 
+  executable     : std :: cout << "\n  test string = " << test ; 
+  data declar    : std :: vector < std :: string > result = StringHelper :: split ( test ) ; 
+  executable     : std :: cout << "\n" ; 
+--- stack size = 3 ---
+  control def    : for ( auto item : result ) { 
+--- stack size = 2 ---
+  executable     : std :: cout << "\n" ; 
+  executable     : title ( "test std::string Converter<T>::toString(T)" ) ; 
+  data declar    : std :: string conv1 = Converter < double > :: toString ( 3 . 1415927 ) ; 
+  data declar    : std :: string conv2 = Converter < int > :: toString ( 73 ) ; 
+  data declar    : std :: string conv3 = Converter < std :: string > :: toString ( "a_test_string plus more" ) ; 
+  executable     : std :: cout << "\n  Converting from values to strings: " ; 
+  executable     : std :: cout << conv1 << ", " << conv2 << ", " << conv3 ; 
+  executable     : putline ( ) ; 
+  executable     : title ( "test T Converter<T>::toValue(std::string)" ) ; 
+  executable     : std :: cout << "\n  Converting from strings to values: " ; 
+  executable     : std :: cout << Converter < double > :: toValue ( conv1 ) << ", " ; 
+  executable     : std :: cout << Converter < int > :: toValue ( conv2 ) << ", " ; 
+  executable     : std :: cout << Converter < std :: string > :: toValue ( conv3 ) ; 
+  executable     : std :: cout << "\n\n" ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include "CodeUtilities.h" 
+  Preproc Stmt   : # include "../StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # ifdef TEST_CODEUTILITIES 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  data declar    : Box < double > boxedDouble = 3 . 1415927 ; 
+  executable     : std :: cout << "\n  boxedDouble = " << boxedDouble ; 
+  executable     : boxedDouble = 0 . 33333 ; 
+  executable     : std :: cout << "\n  boxedDouble = " << boxedDouble ; 
+  data declar    : PersistFactory < std :: string > name = std :: string ( "Jim" ) ; 
+  executable     : name . append ( " Fawcett" ) ; 
+  executable     : std :: cout << "\n  " << name . toXml ( "name" ) ; 
+  executable     : PersistFactory < Box < double >> value = Box < double > ( 9 . 87654 ) ; 
+  executable     : std :: cout << "\n  " << value . toXml ( "value" ) ; 
+  executable     : value += 3 . 14159 ; 
+  executable     : std :: cout << "\n  " << value . toXml ( "value" ) ; 
+  executable     : std :: cout << "\n\n" ; 
+  executable     : title ( "test std::string Converter<T>::toString(T)" ) ; 
+  data declar    : std :: string conv1 = Converter < double > :: toString ( 3 . 1415927 ) ; 
+  data declar    : std :: string conv2 = Converter < int > :: toString ( 73 ) ; 
+  data declar    : std :: string conv3 = Converter < std :: string > :: toString ( "a_test_string plus more" ) ; 
+  executable     : std :: cout << "\n  Converting from values to strings: " ; 
+  executable     : std :: cout << conv1 << ", " << conv2 << ", " << conv3 ; 
+  executable     : putline ( ) ; 
+  executable     : title ( "test T Converter<T>::toValue(std::string)" ) ; 
+  executable     : std :: cout << "\n  Converting from strings to values: " ; 
+  executable     : std :: cout << Converter < double > :: toValue ( conv1 ) << ", " ; 
+  executable     : std :: cout << Converter < int > :: toValue ( conv2 ) << ", " ; 
+  executable     : std :: cout << Converter < std :: string > :: toValue ( conv3 ) ; 
+  executable     : putline ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include "StringUtilities.h" 
+  Preproc Stmt   : # include "../CodeUtilities/CodeUtilities.h" 
+  Preproc Stmt   : # ifdef TEST_STRINGUTILITIES 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Title ( "Testing Utilities Package" ) ; 
+  executable     : putline ( ) ; 
+  executable     : title ( "test split(std::string, ',')" ) ; 
+  data declar    : std :: string test = "a, \n, bc, de, efg, i, j k lm nopq rst" ; 
+  executable     : std :: cout << "\n  test string = " << test ; 
+  data declar    : std :: vector < std :: string > result = split ( test ) ; 
+  executable     : showSplits ( result ) ; 
+  executable     : title ( "test split(std::string, ' ')" ) ; 
+  executable     : std :: cout << "\n  test string = " << test ; 
+  executable     : result = split ( test , ' ' ) ; 
+  executable     : showSplits ( result ) ; 
+  executable     : putline ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # include < cctype > 
+  Preproc Stmt   : # include < iostream > 
+  Preproc Stmt   : # include < functional > 
+  Preproc Stmt   : # include "TestUtilities.h" 
+  Preproc Stmt   : # include "../StringUtilities/StringUtilities.h" 
+  Preproc Stmt   : # ifdef TEST_TESTUTILITIES 
+  using declar   : using namespace Utilities ; 
+--- stack size = 2 ---
+  function def   : bool test_always_passes ( ) { 
+  executable     : return true ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool test_always_fails ( ) { 
+  executable     : return false ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : bool test_always_throws ( ) { 
+  data declar    : std :: exception ex ( "exception\n         -- msg: this test always throws -- " ) ; 
+  executable     : throw ( ex ) ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+  executable     : Title ( "Testing TestUtilities Package" ) ; 
+  executable     : putline ( ) ; 
+  data declar    : TestExecutive ex ; 
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts1 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts2 { 
+--- stack size = 2 ---
+--- stack size = 3 ---
+  default:       : TestExecutive :: TestStr ts3 { 
+--- stack size = 2 ---
+  executable     : ex . registerTest ( ts1 ) ; 
+  executable     : ex . registerTest ( ts2 ) ; 
+  executable     : ex . registerTest ( ts3 ) ; 
+  executable     : if ( result == true ) std :: cout << "\n  all tests passed" ; 
+  executable     : else std :: cout << "\n  at least one test failed" ; 
+  executable     : putline ( 2 ) ; 
+  executable     : return 0 ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif 
+  Preproc Stmt   : # define WIN32_LEAN_AND_MEAN 
+  Preproc Stmt   : # include < Windows . h > 
+  Preproc Stmt   : # include < string > 
+  Preproc Stmt   : # include < winsock2 . h > 
+  Preproc Stmt   : # include "WindowsHelpers.h" 
+  using declar   : using namespace WindowsHelpers ; 
+  Preproc Stmt   : # pragma comment ( lib , "Ws2_32.lib" ) 
+--- stack size = 2 ---
+  function def   : std :: string WindowsHelpers :: wstringToString ( const std :: wstring & wstr ) { 
+  data declar    : std :: string rtn ; 
+  executable     : for ( auto ch : wstr ) rtn += static_cast < char > ( ch ) ; 
+  executable     : rtn += '\0' ; 
+  executable     : return rtn ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: wstring WindowsHelpers :: stringToWideString ( const std :: string & str ) { 
+  data declar    : std :: wstring rtn ; 
+  executable     : for ( auto ch : str ) rtn += ch ; 
+  executable     : rtn += static_cast < wchar_t > ( '\0' ) ; 
+  executable     : return rtn ; 
+--- stack size = 1 ---
+--- stack size = 2 ---
+  function def   : std :: string WindowsHelpers :: GetLastMsg ( bool WantSocketMsg ) { 
+  data declar    : DWORD errorCode ; 
+  executable     : if ( WantSocketMsg ) errorCode = WSAGetLastError ( ) ; 
+  default:       : else errorCode = GetLastError ( ) ; 
+  executable     : if ( errorCode == 0 ) return "no error" ; 
+  data declar    : DWORD dwFlags = FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_ALLOCATE_BUFFER ; 
+  data declar    : LPCVOID lpSource = NULL ; 
+  data declar    : DWORD dwMessageID = errorCode ; 
+  data declar    : DWORD dwLanguageId = MAKELANGID ( LANG_ENGLISH , SUBLANG_ENGLISH_US ) ; 
+  data declar    : LPSTR lpBuffer ; 
+  data declar    : DWORD nSize = 0 ; 
+  data declar    : va_list * Arguments = NULL ; 
+  executable     : FormatMessage ( dwFlags , lpSource , dwMessageID , dwLanguageId , ( LPTSTR ) & lpBuffer , nSize , Arguments ) ; 
+  data declar    : std :: string _msg ( lpBuffer ) ; 
+  executable     : LocalFree ( lpBuffer ) ; 
+  executable     : return _msg ; 
+--- stack size = 1 ---
+  Preproc Stmt   : # ifdef TEST_WINDOWSHELPERS 
+--- stack size = 2 ---
+  function def   : int main ( ) { 
+--- stack size = 1 ---
+  Preproc Stmt   : # endif                                                                                
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+              DateTime.cpp    function                           DateTime      57      24      14
+              DateTime.cpp    function                           DateTime      57      24      14
+
+              public data: TestUtilities.h : 98 - struct {
+                Test test ; 
+              public data: TestUtilities.h : 99 - struct {
+                std :: string testName ; 
+              public data: TestUtilities.h : 98 - struct {
+                Test test ; 
+              public data: TestUtilities.h : 99 - struct {
+                std :: string testName ; 
+
+
+    searched    75 dirs
+   processed    35 files
